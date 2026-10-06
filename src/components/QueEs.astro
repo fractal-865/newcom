@@ -1,0 +1,72 @@
+---
+import { FOTOS } from '../data/contenido';
+---
+
+<!-- ====== QUÉ ES ====== -->
+<section class="seccion" id="que-es" aria-labelledby="tit-quees">
+  <svg class="marca-agua" style="top:60px;right:-90px" aria-hidden="true"><use href="#pelota"/></svg>
+  <div class="contenedor">
+    <div class="s-head">
+      <p class="kicker-mod">Deporte, amistad, salud para toda la vida</p>
+      <h2 class="s-title" id="tit-quees">¿Qué es el Newcom?</h2>
+    </div>
+    <div class="que-grid">
+      <div>
+        <p class="s-lead">El Newcom —también llamado <strong>tátumbol</strong>— es una modalidad de <strong>vóleibol adaptado</strong> donde la pelota <strong>se atrapa y se lanza</strong> en vez de golpearse. Por eso es más fácil, seguro y entretenido para adultos y adultos mayores.</p>
+        <p class="mt24" style="color:var(--tinta-suave)">Se juega en cancha de vóleibol, con red y dos equipos. El objetivo es el mismo de siempre: que la pelota cruce la red y caiga en el campo contrario, mientras nos reímos, nos movemos y nos cuidamos entre todos. <strong style="color:var(--azul)">Envejecimiento activo de verdad, en la Patagonia.</strong></p>
+        <div id="reglas" class="mt40" aria-label="Reglas básicas del Newcom">
+          <h3 style="margin-bottom:14px">Reglas básicas en 1 minuto</h3>
+          <div class="acordeon"><h3 style="margin:0"><button class="acordeon-btn" aria-expanded="false" aria-controls="r1" id="r1b">La pelota se atrapa y se lanza <svg class="chev" aria-hidden="true"><use href="#chev"/></svg></button></h3><div class="acordeon-panel" id="r1"><div class="acordeon-inner"><p>No se golpea como en el vóley: la recibes con las manos y la lanzas a tus compañeras y compañeros. Eso hace el juego más controlado y amable.</p></div></div></div>
+          <div class="acordeon"><h3 style="margin:0"><button class="acordeon-btn" aria-expanded="false" aria-controls="r2" id="r2b">Puedes dar unos pasos con la pelota <svg class="chev" aria-hidden="true"><use href="#chev"/></svg></button></h3><div class="acordeon-panel" id="r2"><div class="acordeon-inner"><p>En general se permiten hasta tres pasos con la pelota en las manos antes de pasarla. Así todas y todos pueden participar sin correr de más.</p></div></div></div>
+          <div class="acordeon"><h3 style="margin:0"><button class="acordeon-btn" aria-expanded="false" aria-controls="r3" id="r3b">Red, puntos y rotación <svg class="chev" aria-hidden="true"><use href="#chev"/></svg></button></h3><div class="acordeon-panel" id="r3"><div class="acordeon-inner"><p>Como en el vóleibol: la pelota debe cruzar la red, los puntos se cuentan por jugada y el equipo rota para que todos jueguen en todas las posiciones.</p></div></div></div>
+          <div class="acordeon"><h3 style="margin:0"><button class="acordeon-btn" aria-expanded="false" aria-controls="r4" id="r4b">Lo más importante: cuidarse y compartir <svg class="chev" aria-hidden="true"><use href="#chev"/></svg></button></h3><div class="acordeon-panel" id="r4"><div class="acordeon-inner"><p>El contacto físico es limitado y el ritmo se adapta a cada grupo. Aquí venimos a movernos, reírnos y hacer amistades que duran.</p></div></div></div>
+          <p class="form-nota">Estas son reglas generales para que te hagas una idea. En tu primera clase te enseñamos todo con calma.</p>
+        </div>
+      </div>
+      <figure class="galeria galeria-sticky" role="region" aria-roledescription="galería" aria-label="Fotos reales de adultos mayores jugando Newcom">
+        <div class="galeria-media">
+          <div class="galeria-marco" id="galeriaMarco" role="button" tabindex="0" aria-label="Ampliar la foto en pantalla grande">
+            {FOTOS.map((f, i) => (
+              <img
+                class:list={['g-img', i === 0 && 'activa']}
+                data-cap={f.cap}
+                src={f.src}
+                alt={f.alt}
+                width="1200"
+                height="800"
+                loading={i > 0 ? 'lazy' : 'eager'}
+                decoding="async"
+              />
+            ))}
+            <span class="galeria-cap"><svg aria-hidden="true"><use href="#pelota"/></svg><span id="galeriaCapTexto" aria-live="polite">{FOTOS[0].cap}</span></span>
+            <span class="g-lupa" aria-hidden="true"><svg><use href="#lupa"/></svg></span>
+          </div>
+          <button class="gal-flecha gal-izq" id="btnGalAnt" aria-label="Foto anterior"><svg aria-hidden="true"><use href="#flecha-izq"/></svg></button>
+          <button class="gal-flecha gal-der" id="btnGalSig" aria-label="Foto siguiente"><svg aria-hidden="true"><use href="#flecha-der"/></svg></button>
+        </div>
+        <div class="puntos" id="galeriaPuntos" aria-label="Seleccionar foto">
+          {FOTOS.map((f, i) => (
+            <button aria-label={`Ver foto ${i + 1}: ${f.cap}`} data-i={i} aria-current={i === 0 ? 'true' : 'false'}></button>
+          ))}
+        </div>
+      </figure>
+    </div>
+    <!-- Lightbox: foto ampliada al hacer click -->
+    <div class="lightbox" id="lightboxGal" hidden>
+      <div class="lb-fondo" data-lb-cerrar></div>
+      <div class="lb-caja" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+        <button class="lb-cerrar" id="lbCerrar" aria-label="Cerrar foto ampliada">✕</button>
+        <button class="lb-nav" id="lbAnt" aria-label="Foto anterior"><svg aria-hidden="true"><use href="#flecha-izq"/></svg></button>
+        <img id="lbImg" src={FOTOS[0].src} alt={FOTOS[0].alt} width="1200" height="800" />
+        <button class="lb-nav lb-dcha" id="lbSig" aria-label="Foto siguiente"><svg aria-hidden="true"><use href="#flecha-der"/></svg></button>
+        <p class="lb-cap" id="lbCap">{FOTOS[0].cap}</p>
+      </div>
+    </div>
+    <div class="beneficios" id="beneficios">
+      <article class="beneficio rev"><span class="b-ico"><svg aria-hidden="true"><use href="#salud"/></svg></span><h3>Salud y vida activa</h3><p>Movimiento amable que fortalece cuerpo y ánimo. Como decimos en el club: <em>“Menos pastillas, más zapatillas”</em>.</p></article>
+      <article class="beneficio rev"><span class="b-ico"><svg aria-hidden="true"><use href="#corazon"/></svg></span><h3>Amistad y comunidad</h3><p>Encuentro, inclusión y compañerismo. El Newcom nos une: aquí nadie juega solo ni queda fuera.</p></article>
+      <article class="beneficio rev"><span class="b-ico"><svg aria-hidden="true"><use href="#pareja"/></svg></span><h3>Sin límite de edad</h3><p>De los +40 a los +68 y más: todas las edades caben. Más personas, más vida.</p></article>
+    </div>
+    <p class="centro-cta"><a class="cta" href="#inscripcion"><svg class="cta-pelota" aria-hidden="true"><use href="#pelota"/></svg> Quiero probar una clase</a></p>
+  </div>
+</section>

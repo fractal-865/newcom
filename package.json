@@ -1,0 +1,15 @@
+{
+  "name": "newcom",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Club Deportivo Newcom Escuela 18 de Septiembre · Punta Arenas",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^7.3.5"
+  }
+}

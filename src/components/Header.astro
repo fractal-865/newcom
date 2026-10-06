@@ -1,0 +1,135 @@
+---
+import { CONTACTO, WHATSAPP_NUMBER } from '../data/contenido';
+const wa = `https://wa.me/${WHATSAPP_NUMBER}`;
+const instagram = 'https://www.instagram.com/newcom.escuela18desep.puq/';
+const facebook = 'https://web.facebook.com/people/Club-Deportivo-Newcom-18-de-Septiembre/61572076650262/';
+const mapaEscuela = 'https://www.google.com/maps/search/?api=1&query=Escuela+18+de+Septiembre%2C+Punta+Arenas';
+---
+
+<!-- ====== HEADER con mega menús por ítem ====== -->
+<header class="header fijo" id="header">
+  <!-- Barra superior: contacto, redes y cuenta regresiva al próximo entrenamiento -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="tb-izq">
+        <a class="tb-tel" href={`tel:+${WHATSAPP_NUMBER}`}><svg aria-hidden="true"><use href="#tel"/></svg><span>{CONTACTO.telefonos[0]}</span></a>
+        <a class="tb-mail" href={`mailto:${CONTACTO.email}`}><svg aria-hidden="true"><use href="#mail"/></svg><span>{CONTACTO.email}</span></a>
+      </div>
+      <p class="tb-cuenta" id="tbCuenta">
+        <svg aria-hidden="true"><use href="#reloj"/></svg>
+        <span id="tbCuentaTexto">Próximo entrenamiento: pronto te avisamos</span>
+      </p>
+      <div class="tb-redes">
+        <a href={facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook de Newcom Punta Arenas"><svg aria-hidden="true"><use href="#fb"/></svg></a>
+        <a href={instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram de Newcom Punta Arenas"><svg aria-hidden="true"><use href="#ig"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="header-inner">
+    <a class="logo" href="#inicio" aria-label="Club Deportivo Newcom Escuela 18 de Septiembre, ir al inicio">
+      <img class="logo-img" src="/img/logo-newcom.avif" width="300" height="345" alt="" fetchpriority="high" decoding="async">
+    </a>
+    <nav class="nav-desktop" aria-label="Navegación principal">
+      <a class="nav-link" href="#inicio" data-spylist="inicio">Inicio</a>
+
+      <div class="nav-item">
+        <a class="nav-btn" href="#familia" aria-expanded="false" aria-controls="megaNosotros" aria-haspopup="true" data-spylist="familia,historia,gente">Nosotros <svg class="chev" aria-hidden="true"><use href="#chev"/></svg></a>
+        <div class="mega" id="megaNosotros">
+          <div class="mega-grid dos">
+            <div class="mega-col">
+              <h2>Comunidad</h2>
+              <a class="mega-link" href="#familia"><span class="mega-ico"><svg aria-hidden="true"><use href="#corazon"/></svg></span><span><strong>Más que un club</strong><small>Una gran familia de barrio</small></span></a>
+              <a class="mega-link" href="#historia"><span class="mega-ico"><svg aria-hidden="true"><use href="#star"/></svg></span><span><strong>Nuestra historia</strong><small>Corazón de barrio desde 2025</small></span></a>
+              <a class="mega-link" href="#medios"><span class="mega-ico"><svg aria-hidden="true"><use href="#mail"/></svg></span><span><strong>En los medios</strong><small>Prensa y radio locales</small></span></a>
+            </div>
+            <div class="mega-col">
+              <h2>Personas</h2>
+              <a class="mega-link" href="#equipo"><span class="mega-ico"><svg aria-hidden="true"><use href="#pareja"/></svg></span><span><strong>Quién guía al equipo</strong><small>Directiva y cuerpo técnico</small></span></a>
+              <a class="mega-link" href="#gente"><span class="mega-ico"><svg aria-hidden="true"><use href="#corazon"/></svg></span><span><strong>Nuestra gente</strong><small>Testimonios del equipo</small></span></a>
+            </div>
+          </div>
+          <div class="mega-cta"><span>¿Listo para tu primera clase?</span><a class="cta cta-mini" href="#inscripcion">Reservar mi clase de prueba</a></div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-btn" href="#horarios" aria-expanded="false" aria-controls="megaHorarios" aria-haspopup="true" data-spylist="donde">Horarios <svg class="chev" aria-hidden="true"><use href="#chev"/></svg></a>
+        <div class="mega" id="megaHorarios">
+          <div class="mega-grid dos">
+            <div class="mega-col">
+              <h2>Entrenamientos</h2>
+              <a class="mega-link" href="#horarios"><span class="mega-ico"><svg aria-hidden="true"><use href="#cal"/></svg></span><span><strong>Cuándo entrenamos</strong><small>Martes, jueves y sábados</small></span></a>
+              <a class="mega-link" href="#llegar"><span class="mega-ico"><svg aria-hidden="true"><use href="#pin"/></svg></span><span><strong>Cómo llegar</strong><small>Mapas de ambas sedes</small></span></a>
+            </div>
+            <div class="mega-col">
+              <h2>Prepara tu visita</h2>
+              <a class="mega-link" href="#categorias"><span class="mega-ico"><svg aria-hidden="true"><use href="#pareja"/></svg></span><span><strong>Categorías</strong><small>+40 · +50 · +60 · +68</small></span></a>
+              <a class="mega-link" href="#llevar"><span class="mega-ico"><svg aria-hidden="true"><use href="#check"/></svg></span><span><strong>Tu bolso Newcomer</strong><small>Qué llevar a tu primera clase</small></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-btn" href="#faq" aria-expanded="false" aria-controls="megaPreguntas" aria-haspopup="true" data-spylist="faq">Preguntas <svg class="chev" aria-hidden="true"><use href="#chev"/></svg></a>
+        <div class="mega" id="megaPreguntas" style="width:min(440px,92vw)">
+          <div class="mega-col">
+            <h2>Las más consultadas</h2>
+            <a class="mega-link" href="#faq" data-abrefaq="0"><span class="mega-ico"><svg aria-hidden="true"><use href="#check"/></svg></span><span><strong>¿Necesito experiencia?</strong></span></a>
+            <a class="mega-link" href="#faq" data-abrefaq="1"><span class="mega-ico"><svg aria-hidden="true"><use href="#pareja"/></svg></span><span><strong>¿Hay límite de edad?</strong></span></a>
+            <a class="mega-link" href="#faq" data-abrefaq="2"><span class="mega-ico"><svg aria-hidden="true"><use href="#star"/></svg></span><span><strong>¿Tiene costo participar?</strong></span></a>
+            <a class="mega-link" href="#faq" data-abrefaq="3"><span class="mega-ico"><svg aria-hidden="true"><use href="#pelota"/></svg></span><span><strong>¿Puedo ir a probar?</strong></span></a>
+            <a class="mega-link" href="#faq" data-abrefaq="5"><span class="mega-ico"><svg aria-hidden="true"><use href="#corazon"/></svg></span><span><strong>¿Qué llevo a mi primera clase?</strong></span></a>
+            <a class="btn-txt" style="margin:8px 12px" href="#faq">Ver todas las preguntas</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a class="nav-btn" href="#contacto" aria-expanded="false" aria-controls="megaContacto" aria-haspopup="true" data-spylist="contacto">Contacto <svg class="chev" aria-hidden="true"><use href="#chev"/></svg></a>
+        <div class="mega der" id="megaContacto" style="width:min(560px,92vw)">
+          <div class="mega-contacto">
+            <a class="mega-link" href={wa}><span class="mega-ico"><svg aria-hidden="true"><use href="#wa"/></svg></span><span><strong>WhatsApp</strong><small>{CONTACTO.telefonos[0]}</small></span></a>
+            <a class="mega-link" href="tel:+56996405463"><span class="mega-ico"><svg aria-hidden="true"><use href="#tel"/></svg></span><span><strong>Teléfono</strong><small>{CONTACTO.telefonos[1]}</small></span></a>
+            <a class="mega-link" href={`mailto:${CONTACTO.email}`}><span class="mega-ico"><svg aria-hidden="true"><use href="#mail"/></svg></span><span><strong>Correo</strong><small>{CONTACTO.email}</small></span></a>
+            <a class="mega-link" href={mapaEscuela} target="_blank" rel="noopener"><span class="mega-ico"><svg aria-hidden="true"><use href="#pin"/></svg></span><span><strong>Ubicación</strong><small>Punta Arenas, Magallanes</small></span></a>
+            <a class="mega-link" href={instagram} target="_blank" rel="noopener"><span class="mega-ico"><svg aria-hidden="true"><use href="#ig"/></svg></span><span><strong>Instagram</strong><small>@newcom.escuela18desep.puq</small></span></a>
+            <a class="mega-link" href={facebook} target="_blank" rel="noopener"><span class="mega-ico"><svg aria-hidden="true"><use href="#fb"/></svg></span><span><strong>Facebook</strong><small>Club Deportivo Newcom 18</small></span></a>
+          </div>
+          <div class="mega-cta"><span>Reserva hoy tu clase de prueba</span><a class="cta cta-mini" href="#inscripcion">Reservar mi clase de prueba</a></div>
+        </div>
+      </div>
+    </nav>
+    <a class="cta cta-mini" href="#inscripcion"><svg class="cta-pelota" aria-hidden="true"><use href="#pelota"/></svg> Quiero probar una clase</a>
+    <button class="btn-hamburguesa" id="btnMenuMovil" aria-expanded="false" aria-controls="menuMovil" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ====== MENÚ MÓVIL (con bloque Contacto) ====== -->
+<div class="menu-movil fijo" id="menuMovil" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+  <div class="mm-cab">
+    <span class="mm-marca"><img class="logo-img" src="/img/logo-newcom.avif" width="300" height="345" alt="Club Deportivo Newcom Escuela 18 de Septiembre" decoding="async"></span>
+    <button class="mm-cerrar" id="btnCerrarMovil" aria-label="Cerrar menú">✕</button>
+  </div>
+  <a class="cta" href="#inscripcion" style="width:100%;margin-bottom:18px"><svg class="cta-pelota" aria-hidden="true"><use href="#pelota"/></svg> Quiero probar una clase</a>
+  <a class="mm-link" href="#inicio">Inicio</a>
+  <div class="mm-bloque"><button aria-expanded="false">Nosotros <svg class="chev" style="width:18px;height:18px" aria-hidden="true"><use href="#chev"/></svg></button>
+    <div class="mm-lista"><a href="#familia">Más que un club</a><a href="#historia">Nuestra historia</a><a href="#equipo">Quién guía al equipo</a><a href="#gente">Nuestra gente</a><a href="#medios">En los medios</a></div></div>
+  <div class="mm-bloque"><button aria-expanded="false">Horarios y lugares <svg class="chev" style="width:18px;height:18px" aria-hidden="true"><use href="#chev"/></svg></button>
+    <div class="mm-lista"><a href="#horarios">Cuándo entrenamos</a><a href="#categorias">Categorías</a><a href="#llegar">Cómo llegar</a><a href="#llevar">Tu bolso Newcomer</a></div></div>
+  <a class="mm-link" href="#faq">Preguntas</a>
+  <div class="mm-bloque"><button aria-expanded="false">Contacto <svg class="chev" style="width:18px;height:18px" aria-hidden="true"><use href="#chev"/></svg></button>
+    <div class="mm-lista">
+      <a href={wa}><svg aria-hidden="true"><use href="#wa"/></svg> WhatsApp <span>{CONTACTO.telefonos[0]}</span></a>
+      <a href="tel:+56996405463"><svg aria-hidden="true"><use href="#tel"/></svg> <span>{CONTACTO.telefonos[1]}</span></a>
+      <a href={`mailto:${CONTACTO.email}`}><svg aria-hidden="true"><use href="#mail"/></svg> <span>{CONTACTO.email}</span></a>
+      <a href={instagram} target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#ig"/></svg> Instagram</a>
+      <a href={facebook} target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#fb"/></svg> Facebook</a>
+      <a href={mapaEscuela} target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pin"/></svg> Cómo llegar</a>
+    </div></div>
+  <div class="mm-redes">
+    <a href={wa} aria-label="WhatsApp del club"><svg aria-hidden="true"><use href="#wa"/></svg></a>
+    <a href={instagram} aria-label="Instagram del club"><svg aria-hidden="true"><use href="#ig"/></svg></a>
+    <a href={facebook} aria-label="Facebook del club"><svg aria-hidden="true"><use href="#fb"/></svg></a>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+---
+import { WHATSAPP_NUMBER } from '../data/contenido';
+const wa = `https://wa.me/${WHATSAPP_NUMBER}`;
+---
+
+<div class="barra-movil fijo" role="region" aria-label="Acciones rápidas">
+  <a class="cta" href="#inscripcion"><svg class="cta-pelota" aria-hidden="true"><use href="#pelota"/></svg> Quiero probar una clase</a>
+  <a class="btn-wa" href={wa} aria-label="Escribir por WhatsApp"><svg style="width:26px;height:26px" aria-hidden="true"><use href="#wa"/></svg></a>
+</div>
+
+<button class="btn-a11y fijo" id="btnA11y" aria-haspopup="dialog" aria-expanded="false" aria-controls="panelA11y" aria-label="Abrir panel de accesibilidad (Alt+A)" title="Accesibilidad (Alt+A)">
+  <svg aria-hidden="true"><use href="#acc"/></svg>
+</button>
+<div class="panel-a11y fijo" id="panelA11y" role="dialog" aria-label="Panel de accesibilidad" hidden>
+  <h2>Accesibilidad</h2>
+  <p class="p-sub">Ajusta el sitio a tu gusto. Se guarda en tu dispositivo. Atajo: <strong>Alt + A</strong>.</p>
+  <div class="a11y-grupo"><strong>Tamaño del texto</strong>
+    <div class="a11y-fila"><button class="a11y-btn" id="txtMenos" aria-label="Reducir tamaño del texto">A−</button><button class="a11y-btn" id="txtNormal" aria-label="Tamaño del texto normal">A</button><button class="a11y-btn" id="txtMas" aria-label="Aumentar tamaño del texto">A+</button><span id="txtNivel" style="align-self:center;font-weight:700">100 %</span></div>
+  </div>
+  <div class="a11y-grupo"><strong>Contraste</strong>
+    <div class="a11y-fila"><button class="a11y-btn" id="conNormal" aria-pressed="true">Normal</button><button class="a11y-btn" id="conAlto" aria-pressed="false">Alto contraste</button><button class="a11y-btn" id="conInv" aria-pressed="false">Invertido</button></div>
+  </div>
+  <div class="a11y-grupo"><strong>Color</strong>
+    <div class="a11y-fila"><button class="a11y-btn" id="swGrises" aria-pressed="false">Blanco y negro</button>
+    <label class="sr" for="selDalton">Modo daltonismo</label>
+    <select class="a11y-select" id="selDalton"><option value="off">Daltonismo: no</option><option value="protan">Protanopía</option><option value="deutan">Deuteranopía</option><option value="tritan">Tritanopía</option></select></div>
+  </div>
+  <div class="a11y-grupo"><strong>Lectura cómoda</strong>
+    <div class="a11y-fila"><button class="a11y-btn" id="swFuente" aria-pressed="false">Fuente legible</button><button class="a11y-btn" id="swEspaciado" aria-pressed="false">Más espaciado</button><button class="a11y-btn" id="swResaltar" aria-pressed="false">Resaltar enlaces</button></div>
+  </div>
+  <div class="a11y-grupo"><strong>Movimiento y vista</strong>
+    <div class="a11y-fila"><button class="a11y-btn" id="swPausar" aria-pressed="false">Pausar animaciones</button><button class="a11y-btn" id="swImg" aria-pressed="false">Ocultar decorativas</button><button class="a11y-btn" id="swCursor" aria-pressed="false">Cursor grande</button><button class="a11y-btn" id="swGuia" aria-pressed="false">Guía de lectura</button></div>
+  </div>
+  <div class="a11y-grupo"><strong>Leer en voz alta</strong>
+    <div class="a11y-fila"><button class="a11y-btn" id="btnLeerSel">Leer selección</button><button class="a11y-btn" id="btnLeerSec">Leer sección</button><button class="a11y-btn rojo-btn" id="btnVozOff">Detener voz</button></div>
+  </div>
+  <div class="a11y-grupo"><button class="a11y-btn rojo-btn" id="btnResetA11y" style="width:100%">Restablecer todo</button></div>
+</div>
+<div id="guiaLectura" class="fijo" aria-hidden="true"></div>
+
+<div class="modal" id="modalLegal" hidden>
+  <div class="modal-overlay" data-cerrar-modal></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+    <div class="modal-cab"><h2 id="modalTitulo">Título</h2><button class="modal-cerrar" id="modalCerrar" aria-label="Cerrar ventana">✕</button></div>
+    <div class="modal-cuerpo" id="modalCuerpo" tabindex="0"></div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+---
+import { TESTIMONIOS } from '../data/contenido';
+---
+
+<!-- ====== NUESTRA GENTE ====== -->
+<section class="seccion" id="gente" aria-labelledby="tit-gente">
+  <div class="contenedor">
+    <div class="divisor" aria-hidden="true"><svg class="d-ico"><use href="#pelota"/></svg></div>
+    <div class="s-head">
+      <p class="kicker-mod">Juego, comunidad y vida</p>
+      <h2 class="s-title" id="tit-gente">Nuestra gente</h2>
+      <p class="s-lead">Historias de quienes ya son parte del equipo.</p>
+    </div>
+    <div class="carrusel" role="region" aria-roledescription="carrusel" aria-label="Testimonios de jugadores y jugadoras">
+      <div class="carrusel-track" id="carruselTrack" tabindex="0">
+        {TESTIMONIOS.map((x, i) => (
+          <article class="t-card" role="group" aria-roledescription="diapositiva" aria-label={`Testimonio ${i + 1} de ${TESTIMONIOS.length}`}>
+            <span class="comilla" aria-hidden="true">“</span>
+            <div class="t-cab"><span class="t-avatar" aria-hidden="true">{x.nombre[0]}</span><span><strong>{x.nombre}, {x.cat}</strong></span></div>
+            <span class="stars" role="img" aria-label="Calificación: 5 de 5">
+              {[0, 1, 2, 3, 4].map(() => <svg aria-hidden="true"><use href="#star"/></svg>)}
+            </span>
+            <p>{x.texto}</p>
+          </article>
+        ))}
+      </div>
+      <div class="puntos" id="carruselPuntos" role="tablist" aria-label="Ir al testimonio">
+        {TESTIMONIOS.map((_, i) => (
+          <button aria-label={`Ir al testimonio ${i + 1}`} data-i={i}></button>
+        ))}
+      </div>
+      <button class="carr-flecha carr-izq" id="btnCarrAnt" aria-label="Testimonio anterior"><svg aria-hidden="true"><use href="#flecha-izq"/></svg></button>
+      <button class="carr-flecha carr-der" id="btnCarrSig" aria-label="Testimonio siguiente"><svg aria-hidden="true"><use href="#flecha-der"/></svg></button>
+    </div>
+  </div>
+</section>

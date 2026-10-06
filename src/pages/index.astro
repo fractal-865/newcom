@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Sprite from '../components/Sprite.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Inscripcion from '../components/Inscripcion.astro';
+import QueEs from '../components/QueEs.astro';
+import Donde from '../components/Donde.astro';
+import Familia from '../components/Familia.astro';
+import Historia from '../components/Historia.astro';
+import Gente from '../components/Gente.astro';
+import Faq from '../components/Faq.astro';
+import Footer from '../components/Footer.astro';
+import Overlays from '../components/Overlays.astro';
+
+const TITLE = 'Newcom en Punta Arenas · Vóleibol para adultos y adultos mayores | Club Newcom Escuela 18 de Septiembre';
+const DESCRIPTION = 'Newcom (tátumbol), vóleibol adaptado para adultos y adultos mayores en Punta Arenas. No necesitas experiencia: ven a entrenar, compartir y disfrutar. Categorías +40, +50, +60 y +68.';
+---
+
+<Layout title={TITLE} description={DESCRIPTION}>
+  <Sprite />
+  <Header />
+  <div id="pagina">
+    <main id="contenido-principal">
+      <Hero />
+      <Inscripcion />
+      <QueEs />
+      <Donde />
+      <Familia />
+      <Historia />
+      <Gente />
+      <Faq />
+      <Footer />
+    </main>
+  </div>
+  <Overlays />
+</Layout>

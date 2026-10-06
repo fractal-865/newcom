@@ -1,0 +1,43 @@
+---
+import { CONTACTO, WHATSAPP_NUMBER } from '../data/contenido';
+const wa = `https://wa.me/${WHATSAPP_NUMBER}`;
+const instagram = 'https://www.instagram.com/newcom.escuela18desep.puq/';
+const facebook = 'https://web.facebook.com/people/Club-Deportivo-Newcom-18-de-Septiembre/61572076650262/';
+const anio = new Date().getFullYear();
+---
+
+<!-- ====== FOOTER con imagen AVIF + overlay ====== -->
+<footer class="cierre" id="contacto" aria-labelledby="tit-cierre">
+  <div class="cierre-fondo" aria-hidden="true"></div>
+  <div class="contenedor">
+    <p class="kicker-mod" style="color:var(--oro)">Punta Arenas, Patagonia, siempre más</p>
+    <h2 id="tit-cierre" style="margin-top:12px">Más personas, <span>más vida.</span></h2>
+    <p style="max-width:52ch;color:#CFE0F1;margin-top:12px">Juntos seguimos sumando. Ven a entrenar, compartir y disfrutar: el Newcom nos une y acá te esperamos con los brazos abiertos.</p>
+    <div class="cierre-ctas">
+      <a class="cta" href="#inscripcion"><svg class="cta-pelota" aria-hidden="true"><use href="#pelota"/></svg> Quiero probar una clase</a>
+      <a class="btn-wa" href={wa}><svg style="width:22px;height:22px" aria-hidden="true"><use href="#wa"/></svg> Hablar por WhatsApp</a>
+    </div>
+    <div class="contacto-grid">
+      <div class="contacto-card"><h3><svg aria-hidden="true"><use href="#tel"/></svg> WhatsApp y llamadas</h3>
+        <a href={wa}><svg class="mini" aria-hidden="true"><use href="#wa"/></svg> <span>{CONTACTO.telefonos[0]}</span></a>
+        <a href="tel:+56996405463"><svg class="mini" aria-hidden="true"><use href="#tel"/></svg> <span>{CONTACTO.telefonos[1]}</span></a>
+      </div>
+      <div class="contacto-card"><h3><svg aria-hidden="true"><use href="#mail"/></svg> Correo</h3>
+        <a href={`mailto:${CONTACTO.email}`}><svg class="mini" aria-hidden="true"><use href="#mail"/></svg> <span>{CONTACTO.email}</span></a>
+        <a href="#donde"><svg class="mini" aria-hidden="true"><use href="#cal"/></svg> Ver horarios de entrenamiento</a>
+      </div>
+      <div class="contacto-card"><h3><svg aria-hidden="true"><use href="#corazon"/></svg> Redes y legal</h3>
+        <a href={facebook} target="_blank" rel="noopener"><svg class="mini" aria-hidden="true"><use href="#fb"/></svg> Facebook del club</a>
+        <a href={instagram} target="_blank" rel="noopener"><svg class="mini" aria-hidden="true"><use href="#ig"/></svg> @newcom.escuela18desep.puq</a>
+        <button class="link-claro" data-modal="privacidad"><svg class="mini" aria-hidden="true"><use href="#check"/></svg> Política de Privacidad</button>
+        <button class="link-claro" data-modal="terminos"><svg class="mini" aria-hidden="true"><use href="#check"/></svg> Términos de Uso</button>
+        <button class="link-claro" data-modal="accesibilidad"><svg class="mini" aria-hidden="true"><use href="#acc"/></svg> Declaración de accesibilidad</button>
+      </div>
+    </div>
+    <div class="footer-fin">
+      <a class="badge-fractal" href="https://fractalhost.cl" target="_blank" rel="noopener"><span class="f-dot" aria-hidden="true"></span> Sitio web desarrollado por Fractal Host</a>
+      <p class="footer-copy">© <span id="anioFooter">{anio}</span> Club Deportivo Newcom Escuela 18 de Septiembre · Punta Arenas, Magallanes</p>
+      <p class="fractal-nota">Fractal Host es auspiciador del Club Deportivo Newcom Escuela 18 de Septiembre.</p>
+    </div>
+  </div>
+</footer>

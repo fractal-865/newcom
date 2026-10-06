@@ -1,0 +1,29 @@
+---
+import { HERO_FALLBACK } from '../data/contenido';
+---
+
+<!-- ====== HERO: 1 columna centrada + fondo AVIF ====== -->
+<section class="hero" id="inicio" aria-labelledby="h1-principal">
+  <picture class="hero-bg" aria-hidden="true">
+    <source type="image/avif" srcset="/img/newcom-punta-arenas-hero-voleibol.avif" />
+    <img src={HERO_FALLBACK.src} alt="" width={HERO_FALLBACK.width} height={HERO_FALLBACK.height} fetchpriority="high" decoding="async" />
+  </picture>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="contenedor hero-centro">
+    <p class="hero-pill aparecer"><i aria-hidden="true"></i> Club Deportivo · Escuela 18 de Septiembre · Punta Arenas</p>
+    <h1 id="h1-principal" class="aparecer">Muévete. Juega. <span class="hl">Pertenece.</span></h1>
+    <p class="hero-sub aparecer">Vóleibol <strong>Newcom</strong> para adultos y adultos mayores en Punta Arenas, Magallanes. Aquí nadie queda fuera: <strong>no necesitas experiencia</strong>, te enseñamos a jugar.</p>
+    <div class="hero-ctas aparecer">
+      <a class="cta" href="#inscripcion"><svg class="cta-pelota" aria-hidden="true"><use href="#pelota"/></svg> Quiero probar una clase</a>
+      <a class="btn-sec claro" href="#donde">Ver horarios</a>
+    </div>
+    <ul class="chips aparecer" aria-label="Características del club">
+      <li class="chip-osc"><svg aria-hidden="true"><use href="#check"/></svg> No necesitas experiencia</li>
+      <li class="chip-osc"><svg aria-hidden="true"><use href="#mujer"/></svg> +40</li>
+      <li class="chip-osc"><svg aria-hidden="true"><use href="#pareja"/></svg> +50</li>
+      <li class="chip-osc"><svg aria-hidden="true"><use href="#pareja"/></svg> +60</li>
+      <li class="chip-osc"><svg aria-hidden="true"><use href="#pareja"/></svg> +68</li>
+    </ul>
+    <p class="hero-live aparecer"><span class="punto-live" aria-hidden="true"></span><span><b>30+</b> <span>jugadores activos · 4 categorías</span></span></p>
+  </div>
+</section>

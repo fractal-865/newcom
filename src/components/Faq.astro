@@ -1,0 +1,24 @@
+---
+import { FAQ, WHATSAPP_NUMBER } from '../data/contenido';
+const wa = `https://wa.me/${WHATSAPP_NUMBER}`;
+---
+
+<!-- ====== FAQ ====== -->
+<section class="seccion" id="faq" aria-labelledby="tit-faq">
+  <div class="contenedor" style="max-width:860px">
+    <div class="divisor" aria-hidden="true"><svg class="d-ico"><use href="#pelota"/></svg></div>
+    <div class="s-head">
+      <p class="kicker-mod">¿Dudas? Aquí las respondemos todas</p>
+      <h2 class="s-title" id="tit-faq">Preguntas frecuentes</h2>
+    </div>
+    <div id="listaFaq">
+      {FAQ.map((f, i) => (
+        <div class="acordeon">
+          <h3 style="margin:0"><button class="acordeon-btn" id={`faqb${i}`} aria-expanded="false" aria-controls={`faqp${i}`}>{f.q} <svg class="chev" aria-hidden="true"><use href="#chev"/></svg></button></h3>
+          <div class="acordeon-panel" id={`faqp${i}`} role="region" aria-labelledby={`faqb${i}`}><div class="acordeon-inner"><p>{f.a}</p></div></div>
+        </div>
+      ))}
+    </div>
+    <p class="centro mt24">¿Tienes otra pregunta? <a class="btn-wa" style="min-height:48px" href={wa}>Escríbenos por WhatsApp</a></p>
+  </div>
+</section>

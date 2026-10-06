@@ -1,0 +1,83 @@
+---
+import { CATEGORIAS, HORARIOS, LLEVAR, WHATSAPP_NUMBER } from '../data/contenido';
+const wa = `https://wa.me/${WHATSAPP_NUMBER}`;
+---
+
+<!-- ====== DÓNDE / CUÁNDO ====== -->
+<section class="seccion" id="donde" aria-labelledby="tit-donde">
+  <div class="contenedor">
+    <div class="divisor" aria-hidden="true"><svg class="d-ico"><use href="#pelota"/></svg></div>
+    <div class="s-head">
+      <p class="kicker-mod">Punta Arenas siempre deporte</p>
+      <h2 class="s-title" id="tit-donde">Dónde, cuándo y qué llevar</h2>
+      <p class="s-lead">Todas las edades, un mismo equipo. Elige tu categoría y ven cuando puedas.</p>
+    </div>
+    <div class="cats-grid" id="categorias" aria-label="Categorías del club">
+      {CATEGORIAS.map((c) => (
+        <article class="cat-card rev">
+          <svg class="cat-ico" aria-hidden="true"><use href={`#${c.icono}`} /></svg>
+          <strong>{c.edad}</strong>
+          <span>{c.detalle}</span>
+        </article>
+      ))}
+    </div>
+    <h3 class="mini-tit" id="tit-horarios">Horarios</h3>
+    <div class="hor-grid" id="horarios" aria-labelledby="tit-horarios">
+      {HORARIOS.map((h) => (
+        <article class="hor-card rev">
+          <h3><svg aria-hidden="true"><use href="#reloj"/></svg>{h.titulo}</h3>
+          <ul>
+            <li><svg aria-hidden="true"><use href="#reloj"/></svg>{h.hora}</li>
+            <li><svg aria-hidden="true"><use href="#pin"/></svg>{h.lugar}</li>
+          </ul>
+          <a class="btn-sec claro" style="min-height:48px" target="_blank" rel="noopener" href={h.mapa}><svg style="width:18px;height:18px" aria-hidden="true"><use href="#pin"/></svg> Cómo llegar</a>
+        </article>
+      ))}
+      <article class="hor-card rev">
+        <h3><svg aria-hidden="true"><use href="#corazon"/></svg>¿Primera vez?</h3>
+        <p style="color:#DCE8F5">Escríbenos y te explicamos cómo llegar a la sede que elijas. Nadie se pierde en este equipo.</p>
+        <a class="btn-sec claro" style="min-height:48px" href={wa}><svg style="width:18px;height:18px" aria-hidden="true"><use href="#wa"/></svg> Pedir indicaciones</a>
+      </article>
+    </div>
+    <!-- Mapas de las dos sedes -->
+    <div class="llegar-bloque" id="llegar">
+      <h3 class="mini-tit">Cómo llegar</h3>
+      <p class="llegar-lead">Dos sedes en Punta Arenas: el SUM de martes y jueves y el gimnasio de los sábados. Toca el mapa para abrirlo en Google Maps.</p>
+      <div class="mapas-grid">
+        {HORARIOS.map((h) => (
+          <article class="mapa-caja rev">
+            <div class="mapa-info">
+              <h4><svg aria-hidden="true"><use href="#pin"/></svg> {h.lugar}</h4>
+              <p>{h.direccion}</p>
+              <a class="btn-txt" href={h.mapa} target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
+            </div>
+            <div class="mapa-marco">
+              <iframe
+                class="mapa-frame"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(h.embed)}&output=embed`}
+                title={`Mapa de ${h.lugar} en Punta Arenas`}
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+    <div id="llevar">
+      <h3 class="mini-tit">Tu bolso newcomer</h3>
+      <p class="llevar-lead">Nada de equipamiento costoso: con ropa cómoda, zapatillas de deporte y una botella de agua estás listo. Esto es lo que recomendamos llevar a tu primera clase — el resto (pelotas, redes y buenas vibras) lo ponemos nosotros.</p>
+      <ul class="llevar-lista" id="listaLlevar">
+        {LLEVAR.map((item, i) => (
+          <li tabindex="0" aria-describedby={`tipb${i}`}>
+            <span class="check-ico"><svg aria-hidden="true"><use href="#check"/></svg></span>
+            <span style="flex:1">{item.t}</span>
+            {item.opcional && <span class="badge-opc">Opcional</span>}
+            <span class="tip" role="tooltip" id={`tipb${i}`}>{item.tip}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,65 @@
+---
+import { MOSAICO } from '../data/contenido';
+const instagram = 'https://www.instagram.com/newcom.escuela18desep.puq/';
+const facebook = 'https://web.facebook.com/people/Club-Deportivo-Newcom-18-de-Septiembre/61572076650262/';
+---
+
+<!-- ====== MÁS QUE UN CLUB ====== -->
+<section class="seccion" id="familia" aria-labelledby="tit-familia">
+  <div class="contenedor">
+    <div class="divisor" aria-hidden="true"><svg class="d-ico"><use href="#pelota"/></svg></div>
+    <div class="familia-grid">
+      <div class="familia-texto rev">
+        <p class="kicker-mod">Corazón de Barrio</p>
+        <h2 id="tit-familia">Más que un club, una gran familia</h2>
+        <p class="emocional">Aquí no venimos solo a jugar: venimos a encontrarnos, reírnos y cuidarnos entre todos. El Newcom nos une y Punta Arenas se mueve con nosotros.</p>
+        <p>Juego, comunidad y vida: compartimos entrenamientos, tercer tiempo y amistades que duran todo el año. <em>Todas las edades, un mismo equipo.</em></p>
+        <div class="valores-grid">
+          <article class="valor-card rev"><span class="v-ico"><svg aria-hidden="true"><use href="#pareja"/></svg></span><strong>Comunidad</strong><p>Te esperamos con los brazos abiertos, siempre.</p></article>
+          <article class="valor-card rev"><span class="v-ico"><svg aria-hidden="true"><use href="#corazon"/></svg></span><strong>Respeto</strong><p>Cada persona juega a su ritmo y es valorada.</p></article>
+          <article class="valor-card rev"><span class="v-ico"><svg aria-hidden="true"><use href="#salud"/></svg></span><strong>Bienestar</strong><p>Menos pastillas, más zapatillas: vida activa.</p></article>
+          <article class="valor-card rev"><span class="v-ico"><svg aria-hidden="true"><use href="#star"/></svg></span><strong>Diversión</strong><p>El tercer tiempo y las risas no faltan nunca.</p></article>
+        </div>
+        <p class="centro-cta" style="margin-top:28px"><a class="cta" href="#inscripcion"><svg class="cta-pelota" aria-hidden="true"><use href="#pelota"/></svg> Quiero probar una clase</a></p>
+      </div>
+      <div class="galeria-zona rev">
+        <h3 class="mini-tit" id="tit-galeria">Galería del club</h3>
+        <div class="carrusel" role="region" aria-roledescription="carrusel" aria-labelledby="tit-galeria">
+          <div class="carrusel-track mosaico-track" id="mosaicoTrack" tabindex="0">
+            {MOSAICO.map((m, i) => (
+              <img
+                class={`mosaico-slide ${m.cls}`}
+                src={m.src}
+                alt={m.alt}
+                data-cap={m.cap}
+                style={`object-position:${m.pos}`}
+                width={m.w}
+                height={m.h}
+                loading="lazy"
+                decoding="async"
+                tabindex="0"
+                role="button"
+                aria-label={`Ampliar foto ${i + 1} de ${MOSAICO.length}: ${m.alt}`}
+              />
+            ))}
+          </div>
+          <div class="puntos" id="mosaicoPuntos" role="tablist" aria-label="Ir a la foto de la galería">
+            {MOSAICO.map((_, i) => (
+              <button aria-label={`Ir a la foto ${i + 1}`} data-i={i}></button>
+            ))}
+          </div>
+          <button class="carr-flecha carr-izq" id="mosaAnt" aria-label="Foto anterior"><svg aria-hidden="true"><use href="#flecha-izq"/></svg></button>
+          <button class="carr-flecha carr-der" id="mosaSig" aria-label="Foto siguiente"><svg aria-hidden="true"><use href="#flecha-der"/></svg></button>
+        </div>
+      </div>
+      <!-- Más fotos: redes sociales -->
+      <div class="mas-fotos rev">
+        <p>¿Quieres seguir viendo fotos del Newcom? Síguenos en nuestras redes sociales:</p>
+        <div class="mas-fotos-links">
+          <a href={facebook} target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#fb"/></svg> Facebook</a>
+          <a href={instagram} target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#ig"/></svg> Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

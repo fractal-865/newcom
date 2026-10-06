@@ -1,0 +1,56 @@
+---
+import { EQUIPO } from '../data/contenido';
+const iniciales = (nombre: string) => nombre.split(' ').slice(0, 2).map((x) => x[0]).join('');
+---
+
+<!-- ====== NUESTRA HISTORIA ====== -->
+<section class="seccion" id="historia" aria-labelledby="tit-historia">
+  <div class="contenedor">
+    <div class="divisor" aria-hidden="true"><svg class="d-ico"><use href="#pelota"/></svg></div>
+    <div class="s-head">
+      <p class="kicker-mod">Desde 2025, juntos seguimos sumando</p>
+      <h2 class="s-title" id="tit-historia">Nuestra historia</h2>
+      <p class="s-lead">Un sueño de barrio que hoy se juega en toda la Patagonia.</p>
+    </div>
+    <div class="timeline" id="timeline">
+      <div class="tl-item rev"><span class="tl-nodo" aria-hidden="true"><svg><use href="#star"/></svg></span>
+        <div class="tl-card"><strong>12 de abril de 2025</strong><p>Nace el Club Deportivo Newcom Escuela 18 de Septiembre, con el sueño de reactivar la vida deportiva de los adultos de la comuna.</p></div>
+      </div>
+      <div class="tl-item rev"><span class="tl-nodo" aria-hidden="true"><svg><use href="#pelota"/></svg></span>
+        <div class="tl-card"><strong>Hoy</strong><p>Alrededor de 30 jugadores activos, 4 categorías y entrenamientos semanales. Ya representamos a Punta Arenas en campeonatos regionales e internacionales, con un 3er lugar regional en +50 (Cerro Castillo).</p></div>
+      </div>
+    </div>
+    <div class="contadores">
+      <div class="contador-card rev"><b class="num contador" data-fin="30">0</b><span>jugadores y jugadoras activas</span></div>
+      <div class="contador-card rev"><b class="num contador" data-fin="4">0</b><span>categorías: +40 a +68</span></div>
+      <div class="contador-card destacado rev"><span class="c-estrella" aria-hidden="true"><svg><use href="#star"/></svg></span><b class="num">3.er</b><span>lugar regional +50 · Cerro Castillo</span></div>
+    </div>
+    <div id="equipo" class="mt40 rev">
+      <h3 style="text-align:center">Quién guía al equipo</h3>
+      <div class="equipo-grid" id="gridEquipo">
+        {EQUIPO.map((p) => (
+          <article class="equipo-card rev">
+            <span class="avatar" aria-hidden="true">{iniciales(p.nombre)}</span>
+            <strong>{p.nombre}</strong>
+            <span>{p.cargo}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+    <div id="medios" class="rev">
+      <h3 style="text-align:center">En los medios</h3>
+      <div class="prensa-grid">
+        <article class="prensa-caja">
+          <span class="p-ico" aria-hidden="true"><svg><use href="#prensa"/></svg></span>
+          <p><span class="p-medio">La Prensa Austral</span><span class="p-titulo">Una treintena de deportistas disfruta del Newcom en club de Escuela 18 de Septiembre</span>La Prensa Austral destacó a nuestra treintena de deportistas disfrutando del Newcom.</p>
+          <a class="btn-txt" href="https://laprensaaustral.cl/2026/05/25/una-treintena-de-deportistas-disfruta-del-newcom-en-club-de-escuela-18-de-septiembre/" target="_blank" rel="noopener noreferrer">Leer la nota</a>
+        </article>
+        <article class="prensa-caja">
+          <span class="p-ico" aria-hidden="true"><svg><use href="#prensa"/></svg></span>
+          <p><span class="p-medio">Radio Polar · 9 de junio de 2025</span><span class="p-titulo">Newcom, el deporte que revitaliza a los adultos mayores, llega a Punta Arenas</span>Radio Polar recibió al club en sus estudios y presentó el Newcom como un deporte de bajo impacto que invita a adultos medios y mayores a sumarse a las jornadas de los sábados.</p>
+          <a class="btn-txt" href="https://www.radiopolar.com/newcom-deporte-revitaliza-adultos-mayores-chile-punta-arenas" target="_blank" rel="noopener noreferrer">Escuchar la nota</a>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

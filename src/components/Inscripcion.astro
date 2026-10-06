@@ -1,0 +1,78 @@
+---
+import { TEXTOS } from '../data/contenido';
+---
+
+<!-- ====== INSCRIPCIÓN ====== -->
+<section class="seccion" id="inscripcion" aria-labelledby="tit-inscripcion">
+  <div class="contenedor">
+    <div class="s-head">
+      <p class="kicker-mod">¡Súmate a este gran encuentro!</p>
+      <h2 class="s-title" id="tit-inscripcion">Reserva tu clase de prueba</h2>
+      <p class="s-lead">{TEXTOS.inscripcionSub}</p>
+    </div>
+    <div class="ins-grid">
+      <div class="ins-sticky">
+        <ol class="pasos" aria-label="Pasos para unirte">
+          <li class="paso"><span class="paso-num" aria-hidden="true">1</span><span><strong>Completa el formulario</strong><small>Son solo 5 datos, prometido.</small></span></li>
+          <li class="paso"><span class="paso-num" aria-hidden="true">2</span><span><strong>Envía tu reserva</strong><small>Se abre WhatsApp con tu mensaje listo para enviar.</small></span></li>
+          <li class="paso"><span class="paso-num" aria-hidden="true">3</span><span><strong>Ven a jugar</strong><small>Te recibimos con cariño en el gimnasio. ¡Así de simple!</small></span></li>
+        </ol>
+        <p class="centro" style="color:var(--tinta-suave);font-weight:600">“Más que un club, una gran familia”</p>
+      </div>
+      <form class="form-tarjeta" id="formInscripcion" novalidate>
+        <h3>Escríbenos y te esperamos</h3>
+        <p style="color:var(--tinta-suave);margin-bottom:20px">Al enviar se abrirá WhatsApp con tu mensaje listo. Tus datos solo se usan para gestionar tu clase de prueba.</p>
+        <div class="campo" id="cNombre">
+          <label for="fNombre">Tu nombre *</label>
+          <input type="text" id="fNombre" name="nombre" autocomplete="name" required aria-describedby="err-nombre" />
+          <p class="error-campo" id="err-nombre">Por favor escribe tu nombre (mínimo 2 letras).</p>
+        </div>
+        <fieldset class="campo" id="cEdad" style="border:none">
+          <legend style="font-weight:700;color:var(--azul);margin-bottom:8px">Tu edad <small>(opcional, elige tu rango)</small></legend>
+          <div class="edades-grid">
+            <label class="edad-opcion"><input type="radio" name="edad" value="Menos de 40" data-sug="¡Todas las edades caben! Te orientamos para encontrar tu lugar en la cancha." /><span>Menos de 40</span></label>
+            <label class="edad-opcion"><input type="radio" name="edad" value="40 a 49" data-sug="Categoría referencial: +40 Mujeres." /><span>40–49</span></label>
+            <label class="edad-opcion"><input type="radio" name="edad" value="50 a 59" data-sug="Categoría referencial: +50 Mixto." /><span>50–59</span></label>
+            <label class="edad-opcion"><input type="radio" name="edad" value="60 a 67" data-sug="Categoría referencial: +60 Mixto." /><span>60–67</span></label>
+            <label class="edad-opcion"><input type="radio" name="edad" value="68 o más" data-sug="Categoría referencial: +68 Mixto." /><span>68+</span></label>
+          </div>
+          <span class="sugerencia" id="sugEdad" aria-live="polite"></span>
+        </fieldset>
+        <div class="campo" id="cTel">
+          <label for="fTel">Teléfono WhatsApp * <small>(solo los 8 dígitos)</small></label>
+          <div class="tel-wrap"><span class="tel-pref" aria-hidden="true">+569</span><input type="tel" id="fTel" name="telefono" inputmode="numeric" autocomplete="tel-national" placeholder="1234 5678" required aria-describedby="err-tel" /></div>
+          <p class="error-campo" id="err-tel">Escribe los 8 dígitos después de +569 (ej: 1234 5678).</p>
+        </div>
+        <fieldset class="campo" id="cDia" style="border:none">
+          <legend style="font-weight:700;color:var(--azul);margin-bottom:8px">¿Qué día quieres venir? *</legend>
+          <div class="dias-grid">
+            <label class="dia-opcion"><input type="radio" name="dia" value="martes" data-dias="2" /><span class="dia-caja"><strong>Martes</strong><small>18:00 a 20:00 h · SUM Enrique Abello con Bulnes</small></span></label>
+            <label class="dia-opcion"><input type="radio" name="dia" value="jueves" data-dias="4" /><span class="dia-caja"><strong>Jueves</strong><small>18:00 a 20:00 h · SUM Enrique Abello con Bulnes</small></span></label>
+            <label class="dia-opcion"><input type="radio" name="dia" value="sabado" data-dias="6" /><span class="dia-caja"><strong>Sábado</strong><small>10:00 a 12:00 h · Gimnasio Escuela 18 de Septiembre</small></span></label>
+          </div>
+          <p class="proxima-fecha" id="proximaFecha" aria-live="polite"></p>
+          <p class="error-campo" id="err-dia">Elige el día que más te acomode.</p>
+        </fieldset>
+        <fieldset class="campo" style="border:none">
+          <legend style="font-weight:700;color:var(--azul);margin-bottom:8px">¿Has jugado antes? <small>(opcional)</small></legend>
+          <div class="exp-grid">
+            <label class="exp-opcion"><input type="radio" name="exp" value="Nunca he jugado" /><span>Nunca</span></label>
+            <label class="exp-opcion"><input type="radio" name="exp" value="He jugado vóleibol" /><span>Vóley</span></label>
+            <label class="exp-opcion"><input type="radio" name="exp" value="He jugado Newcom" /><span>Newcom</span></label>
+          </div>
+        </fieldset>
+        <div class="campo" id="cMensaje">
+          <label for="fMensaje">¿Quieres contarnos algo más? <small>(opcional)</small></label>
+          <textarea id="fMensaje" name="mensaje" placeholder="Ej: voy con una amiga, tengo una duda, etc."></textarea>
+        </div>
+        <div class="campo" id="cConsent">
+          <label class="consent"><input type="checkbox" id="fConsent" required /> <span>He leído y acepto la <a href="#" data-modal="privacidad">Política de Privacidad</a> y autorizo el tratamiento de mis datos para gestionar mi clase de prueba. *</span></label>
+          <p class="error-campo" id="err-consent">Debes aceptar la Política de Privacidad para continuar.</p>
+        </div>
+        <input class="honey" type="text" name="empresa" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button type="submit" class="cta" id="btnEnviar" style="width:100%"><svg class="cta-pelota" aria-hidden="true"><use href="#wa"/></svg> Reservar por WhatsApp</button>
+        <p class="form-nota">Se abrirá una pestaña nueva con tu mensaje listo para enviar al club. Sin spam, prometido.</p>
+      </form>
+    </div>
+  </div>
+</section>
