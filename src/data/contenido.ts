@@ -121,6 +121,15 @@ export const MOSAICO = [
     h: 1236,
     pos: 'center',
   },
+  {
+    cls: 'm-10',
+    src: '/newcom/img/newcom-punta-arenas-fondo-newcom.avif',
+    alt: 'Nuevo fondo del Newcom Punta Arenas',
+    cap: 'Nuevo',
+    w: 800,
+    h: 600,
+    pos: 'center',
+  },
 ];
 
 export const TEXTOS = {
