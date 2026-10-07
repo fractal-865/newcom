@@ -3,5 +3,5 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://newcom18deseptiembre.cl',
+  site: 'https://fractal-865.github.io',
 });
