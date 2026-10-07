@@ -520,10 +520,6 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
   $('#btnGalAnt').addEventListener('click', function () { galIr(galIndice - 1); });
   $('#btnGalSig').addEventListener('click', function () { galIr(galIndice + 1); });
 
-  /* Topbar: botón de accesibilidad abre el panel */
-  var tbA11y = $('#tbA11y');
-  if (tbA11y) tbA11y.addEventListener('click', function () { $('#btnA11y').click(); });
-
   /* Lightbox: click en la foto → se amplía (galería y mosaico) */
   var lb = $('#lightboxGal'), lbFocoPrevio = null, lbSet = [], lbIdx = 0, lbEnGaleria = false;
   function lbPintar() {

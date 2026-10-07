@@ -11,6 +11,9 @@ const wa = `https://wa.me/${WHATSAPP_NUMBER}`;
 <button class="btn-a11y fijo" id="btnA11y" aria-haspopup="dialog" aria-expanded="false" aria-controls="panelA11y" aria-label="Abrir panel de accesibilidad (Alt+A)" title="Accesibilidad (Alt+A)">
   <svg aria-hidden="true"><use href="#acc"/></svg>
 </button>
+<a class="btn-wa-flotante fijo" href={wa} aria-label="Escribir por WhatsApp" title="WhatsApp">
+  <svg aria-hidden="true"><use href="#wa"/></svg>
+</a>
 <div class="panel-a11y fijo" id="panelA11y" role="dialog" aria-label="Panel de accesibilidad" hidden>
   <h2>Accesibilidad</h2>
   <p class="p-sub">Ajusta el sitio a tu gusto. Se guarda en tu dispositivo. Atajo: <strong>Alt + A</strong>.</p>

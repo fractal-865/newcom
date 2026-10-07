@@ -96,12 +96,7 @@ html[data-contraste="alto"]{--fondo:#fff;--fondo-suave:#fff;--tinta:#000;--tinta
 .tb-redes{display:flex;align-items:center;gap:8px}
 .tb-redes a,.tb-redes button{width:27px;height:27px;justify-content:center;border:1px solid rgba(255,255,255,.35);border-radius:50%;background:transparent;cursor:pointer;color:#CFE0F1;transition:background .15s,color .15s,border-color .15s}
 .tb-redes a:hover,.tb-redes button:hover{background:var(--oro);border-color:var(--oro);color:var(--azul-osc)}
-/* Botón de accesibilidad en topbar: texto AA y círculo dividido */
-.tb-a11y-btn{width:auto!important;border-radius:14px!important;padding:0 10px!important;gap:6px!important;display:inline-flex!important;align-items:center!important}
-.tb-a11y-btn .aa-pequeno{font-size:.65rem;font-weight:700}
-.tb-a11y-btn .aa-grande{font-size:.95rem;font-weight:800}
-.tb-a11y-btn .circulo-dividido{width:16px;height:16px;border-radius:50%;border:2px solid currentColor;position:relative;overflow:hidden}
-.tb-a11y-btn .circulo-dividido::after{content:"";position:absolute;top:0;left:0;right:50%;bottom:0;background:currentColor;clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+
 @media(max-width:820px){.tb-mail{display:none}}
 @media(max-width:600px){
   .tb-tel span{display:none}
@@ -563,6 +558,10 @@ html.a11y-ocultarimg .cierre-fondo{background-image:none}
 .btn-a11y{right:16px;bottom:16px;z-index:220;width:58px;height:58px;border-radius:50%;border:1px solid var(--borde);background:#fff;color:var(--azul-med);cursor:pointer;box-shadow:var(--elev-2);display:grid;place-items:center}
 .btn-a11y svg{width:28px;height:28px}
 @media(max-width:760px){.btn-a11y{bottom:96px}}
+/* Botón flotante de WhatsApp junto al de accesibilidad */
+.btn-wa-flotante{right:16px;bottom:86px;z-index:220;width:58px;height:58px;border-radius:50%;border:1px solid var(--borde);background:#fff;color:#25D366;cursor:pointer;box-shadow:var(--elev-2);display:grid;place-items:center;text-decoration:none}
+.btn-wa-flotante svg{width:28px;height:28px}
+@media(max-width:760px){.btn-wa-flotante{bottom:166px}}
 .panel-a11y{right:16px;bottom:86px;z-index:230;width:min(400px,calc(100vw - 32px));max-height:min(76vh,640px);overflow:auto;background:#fff;border:1px solid var(--borde);border-radius:22px;box-shadow:var(--elev-3);padding:24px}
 @media(max-width:760px){.panel-a11y{bottom:166px}}
 .panel-a11y h2{font-size:1.15rem;margin-bottom:4px}
