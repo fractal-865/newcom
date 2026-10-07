@@ -16,24 +16,24 @@ export const CONTACTO = {
 // Fotos reales del club (en /public/img). Nombres de archivo pensados para SEO:
 // siempre incluyen «newcom» y «punta arenas» + descripción del contenido.
 export const HERO_FALLBACK = {
-  src: '/img/newcom-punta-arenas-hero-voleibol.avif',
+  src: '/newcom/img/newcom-punta-arenas-hero-voleibol.avif',
   width: 1920,
   height: 1097,
 };
 
 export const FOTOS = [
   {
-    src: '/img/newcom-punta-arenas-potencia-tus-anos.avif',
+    src: '/newcom/img/newcom-punta-arenas-potencia-tus-anos.avif',
     alt: 'Jugador del Club Newcom de Punta Arenas rematando el balón sobre la red durante un partido de vóleibol adaptado',
     cap: 'Newcom Punta Arenas: potencia tus años',
   },
   {
-    src: '/img/newcom-punta-arenas-unete-a-nuestro-equipo.avif',
+    src: '/newcom/img/newcom-punta-arenas-unete-a-nuestro-equipo.avif',
     alt: 'Equipo del Club Newcom de Punta Arenas en formación defensiva dentro del gimnasio',
     cap: 'El Newcom nos une',
   },
   {
-    src: '/img/newcom-punta-arenas-entrena-tu-defensa.avif',
+    src: '/newcom/img/newcom-punta-arenas-entrena-tu-defensa.avif',
     alt: 'Jugadora del Club Newcom de Punta Arenas defendiendo el balón con las manos en el gimnasio',
     cap: 'Entrena tu defensa con nosotros',
   },
@@ -42,7 +42,7 @@ export const FOTOS = [
 export const MOSAICO = [
   {
     cls: 'm-4',
-    src: '/img/newcom-punta-arenas-equipo-en-la-cancha.avif',
+    src: '/newcom/img/newcom-punta-arenas-equipo-en-la-cancha.avif',
     alt: 'Equipo del Club Newcom de Punta Arenas posando en la cancha después de un partido',
     cap: 'Un mismo equipo, todas las edades',
     w: 1600,
@@ -51,7 +51,7 @@ export const MOSAICO = [
   },
   {
     cls: 'm-5',
-    src: '/img/newcom-punta-arenas-manos-al-centro.avif',
+    src: '/newcom/img/newcom-punta-arenas-manos-al-centro.avif',
     alt: 'Jugadoras del Newcom de Punta Arenas juntan las manos sobre el balón en una rueda de equipo',
     cap: 'Manos al centro: juntas somos más',
     w: 1280,
@@ -60,7 +60,7 @@ export const MOSAICO = [
   },
   {
     cls: 'm-2',
-    src: '/img/newcom-punta-arenas-grupo-con-trofeos.avif',
+    src: '/newcom/img/newcom-punta-arenas-grupo-con-trofeos.avif',
     alt: 'Foto grupal del Club Newcom de Punta Arenas con la bandera del club y los trofeos en el gimnasio',
     cap: 'Familia, bandera y trofeos: el orgullo del Newcom',
     w: 1600,
@@ -69,7 +69,7 @@ export const MOSAICO = [
   },
   {
     cls: 'm-9',
-    src: '/img/newcom-punta-arenas-equipo-grupal.avif',
+    src: '/newcom/img/newcom-punta-arenas-equipo-grupal.avif',
     alt: 'Toda la familia del Club Newcom de Punta Arenas reunida frente a la bandera del club en el gimnasio',
     cap: 'Toda la familia Newcom en una sola foto',
     w: 635,
@@ -78,7 +78,7 @@ export const MOSAICO = [
   },
   {
     cls: 'm-3',
-    src: '/img/newcom-punta-arenas-campeonato-nacional-2026.avif',
+    src: '/newcom/img/newcom-punta-arenas-campeonato-nacional-2026.avif',
     alt: 'Cartel del Primer Campeonato Nacional Newcom Magallánico 2026 con sede en Punta Arenas',
     cap: 'Primer Campeonato Nacional Newcom Magallánico 2026',
     w: 685,
@@ -87,7 +87,7 @@ export const MOSAICO = [
   },
   {
     cls: 'm-1',
-    src: '/img/newcom-punta-arenas-ven-a-ser-parte.avif',
+    src: '/newcom/img/newcom-punta-arenas-ven-a-ser-parte.avif',
     alt: 'Panfleto del Club Newcom de Punta Arenas: ¡Ven a ser parte de nuestro equipo! con categorías, horarios y contacto',
     cap: '¡Ven a ser parte de nuestro equipo!',
     w: 719,
@@ -96,7 +96,7 @@ export const MOSAICO = [
   },
   {
     cls: 'm-6',
-    src: '/img/newcom-punta-arenas-unete-a-nuestro-equipo.avif',
+    src: '/newcom/img/newcom-punta-arenas-unete-a-nuestro-equipo.avif',
     alt: 'Panfleto del Newcom con jugadoras en posición de recepción y el texto ¡Únete a nuestro equipo! Newcom Deporte',
     cap: '¡Únete a nuestro equipo! Newcom Deporte',
     w: 1126,
@@ -105,7 +105,7 @@ export const MOSAICO = [
   },
   {
     cls: 'm-7',
-    src: '/img/newcom-punta-arenas-potencia-tus-anos.avif',
+    src: '/newcom/img/newcom-punta-arenas-potencia-tus-anos.avif',
     alt: 'Panfleto del Newcom con un jugador armando el juego y el eslogan ¡Potencia tus años! ¡Únete ya!',
     cap: '¡Potencia tus años! ¡Únete ya!',
     w: 1148,
@@ -114,7 +114,7 @@ export const MOSAICO = [
   },
   {
     cls: 'm-8',
-    src: '/img/newcom-punta-arenas-entrena-tu-defensa.avif',
+    src: '/newcom/img/newcom-punta-arenas-entrena-tu-defensa.avif',
     alt: 'Panfleto del Newcom con una jugadora con el balón y el texto Entrena tu defensa, ¡únete a nuestro equipo!',
     cap: '¡Entrena tu defensa! ¡Únete a nuestro equipo!',
     w: 981,
