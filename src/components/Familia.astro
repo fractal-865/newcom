@@ -24,8 +24,7 @@ const facebook = 'https://web.facebook.com/people/Club-Deportivo-Newcom-18-de-Se
       </div>
       <div class="galeria-zona rev">
         <h3 class="mini-tit" id="tit-galeria">Galería del club</h3>
-        <div class="carrusel" role="region" aria-roledescription="carrusel" aria-labelledby="tit-galeria">
-          <div class="carrusel-track mosaico-track" id="mosaicoTrack" tabindex="0">
+        <div class="galeria-track mosaico-track" id="mosaicoTrack">
             {MOSAICO.map((m, i) => (
               <img
                 class={`mosaico-slide ${m.cls}`}
@@ -42,14 +41,6 @@ const facebook = 'https://web.facebook.com/people/Club-Deportivo-Newcom-18-de-Se
                 aria-label={`Ampliar foto ${i + 1} de ${MOSAICO.length}: ${m.alt}`}
               />
             ))}
-          </div>
-          <div class="puntos" id="mosaicoPuntos" role="tablist" aria-label="Ir a la foto de la galería">
-            {MOSAICO.map((_, i) => (
-              <button aria-label={`Ir a la foto ${i + 1}`} data-i={i}></button>
-            ))}
-          </div>
-          <button class="carr-flecha carr-izq" id="mosaAnt" aria-label="Foto anterior"><svg aria-hidden="true"><use href="#flecha-izq"/></svg></button>
-          <button class="carr-flecha carr-der" id="mosaSig" aria-label="Foto siguiente"><svg aria-hidden="true"><use href="#flecha-der"/></svg></button>
         </div>
       </div>
       <!-- Más fotos: redes sociales -->

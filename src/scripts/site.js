@@ -338,50 +338,6 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
     if (e.key === 'ArrowLeft') { e.preventDefault(); irA(indiceActual - 1, true); }
   });
 
-  /* ══════════ CARRUSEL DE LA GALERÍA (fotos del club) ══════════ */
-  var mTrack = $('#mosaicoTrack'), mIdx = 0;
-  function mSlides() { return $$('.mosaico-slide', mTrack); }
-  function mScrollIzq(s, i) { return s[i].offsetLeft - s[0].offsetLeft; }
-  function mPintar() {
-    $$('#mosaicoPuntos button').forEach(function (b, i) {
-      b.setAttribute('aria-current', String(i === mIdx));
-    });
-  }
-  function mIndicePorScroll(s) {
-    if (!s.length) return 0;
-    if (mTrack.scrollLeft + mTrack.clientWidth >= mTrack.scrollWidth - 8) return s.length - 1;
-    var mejor = 0, mejorD = Infinity;
-    for (var i = 0; i < s.length; i++) {
-      var d = Math.abs(mScrollIzq(s, i) - mTrack.scrollLeft);
-      if (d < mejorD) { mejorD = d; mejor = i; }
-    }
-    return mejor;
-  }
-  function mIrA(i, suave) {
-    var s = mSlides(), n = s.length;
-    if (!n) return;
-    if (i >= n) i = 0;
-    if (i < 0) i = n - 1;
-    mIdx = i;
-    mTrack.scrollTo({ left: mScrollIzq(s, i), behavior: (suave && !reduceMov) ? 'smooth' : 'auto' });
-    mPintar();
-  }
-  $('#mosaAnt').addEventListener('click', function () { mIrA(mIdx - 1, true); });
-  $('#mosaSig').addEventListener('click', function () { mIrA(mIdx + 1, true); });
-  $('#mosaicoPuntos').addEventListener('click', function (e) {
-    var b = e.target.closest('button');
-    if (b) mIrA(+b.dataset.i, true);
-  });
-  mTrack.addEventListener('scroll', function () {
-    var i = mIndicePorScroll(mSlides());
-    if (i !== mIdx) { mIdx = i; mPintar(); }
-  }, { passive: true });
-  mTrack.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowRight') { e.preventDefault(); mIrA(mIdx + 1, true); }
-    if (e.key === 'ArrowLeft') { e.preventDefault(); mIrA(mIdx - 1, true); }
-  });
-  mPintar();
-
   /* ══════════ CONTADORES ══════════ */
   var contObs = new IntersectionObserver(function (es) {
     es.forEach(function (en) {
@@ -563,6 +519,10 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
   });
   $('#btnGalAnt').addEventListener('click', function () { galIr(galIndice - 1); });
   $('#btnGalSig').addEventListener('click', function () { galIr(galIndice + 1); });
+
+  /* Topbar: botón de accesibilidad abre el panel */
+  var tbA11y = $('#tbA11y');
+  if (tbA11y) tbA11y.addEventListener('click', function () { $('#btnA11y').click(); });
 
   /* Lightbox: click en la foto → se amplía (galería y mosaico) */
   var lb = $('#lightboxGal'), lbFocoPrevio = null, lbSet = [], lbIdx = 0, lbEnGaleria = false;

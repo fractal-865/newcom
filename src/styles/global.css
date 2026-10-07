@@ -94,8 +94,8 @@ html[data-contraste="alto"]{--fondo:#fff;--fondo-suave:#fff;--tinta:#000;--tinta
 .tb-cuenta{display:flex;align-items:center;gap:8px;margin:0;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tb-cuenta svg{color:var(--oro);width:15px;height:15px}
 .tb-redes{display:flex;align-items:center;gap:8px}
-.tb-redes a{width:27px;height:27px;justify-content:center;border:1px solid rgba(255,255,255,.35);border-radius:50%}
-.tb-redes a:hover{background:var(--oro);border-color:var(--oro);color:var(--azul-osc)}
+.tb-redes a,.tb-redes button{width:27px;height:27px;justify-content:center;border:1px solid rgba(255,255,255,.35);border-radius:50%;background:transparent;cursor:pointer;color:#CFE0F1;transition:background .15s,color .15s,border-color .15s}
+.tb-redes a:hover,.tb-redes button:hover{background:var(--oro);border-color:var(--oro);color:var(--azul-osc)}
 @media(max-width:820px){.tb-mail{display:none}}
 @media(max-width:600px){
   .tb-tel span{display:none}
@@ -412,11 +412,10 @@ li.tip-abierto .tip,li:hover .tip,li:focus-visible .tip{transform:translateX(-50
 .valor-card:nth-child(4) .v-ico{background:var(--oro);color:var(--azul)}
 .valor-card strong{display:block;color:var(--azul);font-family:'Sora',sans-serif;font-size:1rem;margin-bottom:4px}
 .valor-card p{font-size:.9rem;color:var(--tinta-suave)}
-/* Galería carrusel: 9 fotos completas (ancho según su proporción, sin recortar) */
-.mosaico-slide{flex:0 0 auto;height:300px;width:auto;max-width:100%;scroll-snap-align:start;border-radius:18px;border:5px solid #fff;box-shadow:var(--elev-2);object-fit:cover;cursor:zoom-in;background:var(--fondo-suave);transition:transform .25s,box-shadow .25s}
-.mosaico-slide:hover{transform:scale(1.02);box-shadow:var(--elev-3)}
-@media(min-width:700px){.mosaico-slide{height:380px}}
-@media(min-width:1020px){.mosaico-slide{height:430px}}
+/* Galería clásica: grid de thumbnails con zoom al hacer clic */
+.galeria-track{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(120px,1fr))}
+.mosaico-slide{aspect-ratio:1/1;width:100%;height:auto;object-fit:cover;border-radius:12px;border:3px solid #fff;box-shadow:var(--elev-1);cursor:zoom-in;transition:transform .15s,box-shadow .15s}
+.mosaico-slide:hover{transform:scale(1.03);box-shadow:var(--elev-2)}
 /* Redes sociales al final de la sección: ver más fotos */
 .mas-fotos{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
 .mas-fotos p{margin:0;color:var(--tinta-suave);font-size:1.05rem;max-width:56ch}
