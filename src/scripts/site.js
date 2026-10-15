@@ -261,7 +261,6 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
     return {
       nombre: $('#fNombre').value.trim(),
       edad: edad ? edad.value : '',
-      tel: $('#fTel').value.replace(/\s/g, ''),
       dia: dia ? dia.value : '',
       diaTexto: dia ? ((dia.closest('label') || dia).querySelector('.dia-caja strong').textContent + ' ' + (dia.closest('label') || dia).querySelector('.dia-caja small').textContent) : '',
       exp: exp ? exp.value : '',
@@ -272,7 +271,6 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
     var lineas = ['¡Hola! Quiero reservar mi clase de prueba de Newcom 🏐', '', 'Nombre: ' + d.nombre];
     if (d.edad) lineas.push('Edad: ' + d.edad);
     lineas.push('Día elegido: ' + d.diaTexto);
-    lineas.push('Teléfono: +569 ' + d.tel);
     if (d.exp) lineas.push('Experiencia: ' + d.exp);
     if (d.mensaje) lineas.push('Mensaje: ' + d.mensaje);
     return encodeURIComponent(lineas.join('\n'));
@@ -282,11 +280,10 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
     if (form.empresa.value) return;
     var d = datosForm();
     var e1 = marcarError('#cNombre', d.nombre.length < 2);
-    var e2 = marcarError('#cTel', !/^\d{8}$/.test(d.tel));
     var e3 = marcarError('#cDia', !d.dia);
     var e4 = marcarError('#cConsent', !$('#fConsent').checked);
-    if (e1 || e2 || e3 || e4) {
-      var primero = $(e1 ? '#fNombre' : e2 ? '#fTel' : e3 ? '#cDia' : '#fConsent');
+    if (e1 || e3 || e4) {
+      var primero = $(e1 ? '#fNombre' : e3 ? '#cDia' : '#fConsent');
       if (primero) primero.focus();
       return;
     }
@@ -298,7 +295,6 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
         body: JSON.stringify({
           nombre: d.nombre,
           edad: d.edad,
-          telefono: d.tel,
           dia: d.dia,
           diaTexto: d.diaTexto,
           exp: d.exp,

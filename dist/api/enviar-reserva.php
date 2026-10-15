@@ -67,7 +67,7 @@ $diasValidos = [
 if (mb_strlen($nombre, 'UTF-8') < 2) {
   responder(422, ['ok' => false, 'error' => 'Nombre inválido.']);
 }
-if (!preg_match('/^\d{8}$/', $tel)) {
+if ($tel !== '' && !preg_match('/^\d{8}$/', $tel)) {
   responder(422, ['ok' => false, 'error' => 'Teléfono inválido (8 dígitos).']);
 }
 if (!isset($diasValidos[$dia])) {
@@ -105,7 +105,7 @@ try {
   $filas = [
     'Nombre' => $nombre,
     'Edad' => $edad !== '' ? $edad : '—',
-    'Teléfono WhatsApp' => '+569 ' . $tel,
+    'Teléfono WhatsApp' => $tel !== '' ? '+569 ' . $tel : '—',
     'Día elegido' => $diaTexto,
     'Experiencia' => $exp !== '' ? $exp : '—',
     'Mensaje' => $mensaje !== '' ? $mensaje : '—',

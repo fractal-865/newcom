@@ -294,8 +294,13 @@ html.a11y-pausar .punto-live::after{animation:none;opacity:0}
 .consent a{font-weight:700}
 .honey{position:absolute;left:-9999px;opacity:0;height:0;width:0}
 .form-nota{font-size:.9rem;color:var(--tinta-suave);margin-top:12px}
-/* Formulario de contacto (footer): tarjeta centrada + mensajes de estado */
-.contacto-form{max-width:720px;margin:0 auto 48px}
+/* Footer contacto: info a un lado, formulario al otro */
+.contacto-layout{display:grid;gap:28px;margin-bottom:48px}
+@media(min-width:980px){.contacto-layout{grid-template-columns:.9fr 1.1fr;align-items:start}}
+.contacto-tit{color:#fff;font-size:1.35rem;margin-bottom:6px}
+.contacto-bajada{color:#CFE0F1;margin-bottom:20px;max-width:44ch}
+.contacto-layout .contacto-grid{grid-template-columns:1fr;margin-bottom:0}
+.contacto-form{min-width:0;margin:0;max-width:none}
 .form-msg{display:none;font-weight:700;margin-top:14px;padding:12px 16px;border-radius:12px}
 .form-msg.ok{display:block;color:#0d7038;background:#E7F6EE;border:1.5px solid #9ADBB8}
 .form-msg.error{display:block;color:var(--rojo-osc);background:var(--rojo-suave);border:1.5px solid #F3B6BC}
