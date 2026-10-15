@@ -651,6 +651,67 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
   autoPlay();
   aplicar();
 
+  /* ══════════ COOKIES: aviso compacto + flotantes que suben/bajan ══════════ */
+  var ckBarra = $('#barraCookies'), ckPrefs = $('#ckPrefs');
+  function ckLeer() {
+    try { return JSON.parse(localStorage.getItem('newcomCookies') || 'null'); }
+    catch (e) { return { necesarias: true }; }
+  }
+  function ckMedir() {
+    if (ckBarra && !ckBarra.hidden) {
+      document.documentElement.style.setProperty('--cookies-alto', ckBarra.offsetHeight + 'px');
+    }
+  }
+  function ckMostrar() {
+    if (!ckBarra || ckLeer()) return;
+    ckBarra.hidden = false;
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        ckBarra.classList.add('visible');
+        document.body.classList.add('cookies-visible');
+        ckMedir();
+      });
+    });
+  }
+  function ckOcultar() {
+    if (!ckBarra || ckBarra.hidden) return;
+    var quitar = function () {
+      ckBarra.hidden = true;
+      ckBarra.classList.remove('visible', 'salir');
+      document.body.classList.remove('cookies-visible');
+    };
+    if (reduceMov || (typeof a11y !== 'undefined' && a11y.pausar)) { quitar(); return; }
+    ckBarra.classList.add('salir');
+    setTimeout(quitar, 450);
+  }
+  function ckGuardar(v) {
+    try {
+      localStorage.setItem('newcomCookies', JSON.stringify({
+        necesarias: true,
+        analitica: !!v.analitica,
+        marketing: !!v.marketing,
+        fecha: new Date().toISOString()
+      }));
+    } catch (e) { /* noop */ }
+    window.__consentCookies = v;
+    ckOcultar();
+  }
+  if (ckBarra) {
+    $('#ckAceptar').addEventListener('click', function () { ckGuardar({ analitica: true, marketing: true }); });
+    $('#ckRechazar').addEventListener('click', function () { ckGuardar({ analitica: false, marketing: false }); });
+    $('#ckConfig').addEventListener('click', function () {
+      var abrir = ckPrefs.hidden;
+      ckPrefs.hidden = !abrir;
+      $('#ckConfig').setAttribute('aria-expanded', String(abrir));
+      ckMedir();
+    });
+    $('#ckGuardar').addEventListener('click', function () {
+      ckGuardar({ analitica: $('#ckAnalitica').checked, marketing: $('#ckMarketing').checked });
+    });
+    window.addEventListener('resize', function () { ckMedir(); });
+    setTimeout(ckMostrar, 1200);
+  }
+
   /* Parallax del fondo del footer */
   (function () {
     var f = $('.cierre'), fo = $('.cierre-fondo');

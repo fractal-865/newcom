@@ -234,12 +234,20 @@ export const TEXTOS_LEGALES: Record<string, string> = {
     '<h3>4. Responsabilidad</h3><p>El club se reserva el derecho de modificar horarios, sedes y actividades informadas en este sitio.</p>',
   accesibilidad:
     '<h3>Declaración de accesibilidad</h3><p>Este sitio se diseñó para cumplir WCAG 2.1 AA: texto base 18 px, contraste AA, navegación por teclado, foco visible, y un panel de ajustes propios (tamaño de texto hasta 200 %, alto contraste, escala de grises, filtros de daltonismo, fuente legible, espaciado, resaltado de enlaces, pausa de animaciones, guía de lectura, cursor grande y lectura en voz alta).</p><p>Si tienes alguna dificultad para usar el sitio, escríbenos a clubdeportivo.18@gmail.com o por WhatsApp; te ayudaremos con gusto.</p>',
+  cookies:
+    '<div class="borrador">BORRADOR LEY 21.719 — PENDIENTE DE REVISIÓN POR ABOGADO ANTES DE PUBLICAR.</div>' +
+    '<h3>1. Qué cookies usamos</h3><p>Este sitio usa solo las cookies mínimas para funcionar. No instalamos cookies de rastreo propias ni vendemos datos.</p>' +
+    '<h3>2. Cookies necesarias (siempre activas)</h3><ul><li><strong>Tu elección de cookies</strong> (nombre: <em>newcomCookies</em>): recuerda si aceptaste o rechazaste, para no preguntarte de nuevo. Dura 12 meses.</li><li><strong>Tus ajustes de accesibilidad</strong> (nombre: <em>newcomA11y</em>): guarda tamaño de texto, contraste y demás preferencias del panel de accesibilidad, solo en tu dispositivo.</li></ul>' +
+    '<h3>3. Cookies opcionales</h3><p>Solo se activarían si aceptas <strong>Analítica</strong> (entender visitas para mejorar el sitio) o <strong>Marketing</strong> (avisos del club). Hoy el sitio no carga ninguna herramienta de ese tipo: al aceptarlas solo das tu permiso anticipado.</p>' +
+    '<h3>4. Contenido de terceros</h3><p>Los mapas de Google, las fuentes y los enlaces a redes sociales pueden fijar sus propias cookies al usarlos. Revisa sus políticas en sus sitios.</p>' +
+    '<h3>5. Base legal y tus derechos</h3><p>Usamos cookies opcionales solo con tu consentimiento (art. 4 y ss., Ley N° 21.719). Puedes cambiar de opinión cuando quieras borrando los datos de este sitio en tu navegador, lo que vuelve a mostrar el aviso.</p>',
 };
 
 export const TITULOS_MODALES: Record<string, string> = {
   privacidad: 'Política de Privacidad (Ley 21.719)',
   terminos: 'Términos de Uso',
   accesibilidad: 'Declaración de Accesibilidad',
+  cookies: 'Política de Cookies',
 };
 
 // JSON-LD para SEO (se inyecta en el <head> como estático)

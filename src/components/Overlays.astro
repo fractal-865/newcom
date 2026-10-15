@@ -9,6 +9,22 @@ const wa = `https://wa.me/${WHATSAPP_NUMBER}`;
 <a class="btn-wa-flotante fijo" href={wa} aria-label="Escribir por WhatsApp" title="WhatsApp">
   <svg aria-hidden="true"><use href="#wa"/></svg>
 </a>
+
+<!-- Aviso de cookies: compacto, no tapa los flotantes -->
+<div class="cookies" id="barraCookies" role="region" aria-label="Aviso de cookies" hidden>
+  <p class="cookies-txt"><strong>🍪 Cookies mínimas:</strong> solo las necesarias para que el sitio funcione. <button class="cookies-link" data-modal="cookies">Política de Cookies</button></p>
+  <div class="cookies-btns">
+    <button class="cookie-btn primario" id="ckAceptar">Aceptar todo</button>
+    <button class="cookie-btn" id="ckRechazar">Rechazar todo</button>
+    <button class="cookie-btn" id="ckConfig" aria-expanded="false" aria-controls="ckPrefs">Configuración</button>
+  </div>
+  <div class="cookies-prefs" id="ckPrefs" hidden>
+    <label><input type="checkbox" checked disabled /> Necesarias <small>(siempre activas)</small></label>
+    <label><input type="checkbox" id="ckAnalitica" /> Analítica <small>(mejorar el sitio)</small></label>
+    <label><input type="checkbox" id="ckMarketing" /> Marketing <small>(avisos del club)</small></label>
+    <button class="cookie-btn primario" id="ckGuardar">Guardar selección</button>
+  </div>
+</div>
 <div class="panel-a11y fijo" id="panelA11y" role="dialog" aria-label="Panel de accesibilidad" hidden>
   <h2>Accesibilidad</h2>
   <p class="p-sub">Ajusta el sitio a tu gusto. Se guarda en tu dispositivo. Atajo: <strong>Alt + A</strong>.</p>
