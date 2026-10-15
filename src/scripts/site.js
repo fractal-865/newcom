@@ -311,6 +311,57 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
     window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + mensajeWa(d), '_blank', 'noopener');
   });
 
+  /* ══════════ FORMULARIO DE CONTACTO (footer → correo) ══════════ */
+  var formC = $('#formContacto');
+  if (formC) {
+    var msgC = $('#msgContacto'), btnC = $('#btnContacto');
+    function pintarMsgC(ok, texto) {
+      msgC.classList.remove('ok', 'error');
+      msgC.textContent = texto;
+      if (texto) msgC.classList.add(ok ? 'ok' : 'error');
+    }
+    formC.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      pintarMsgC(true, '');
+      if (formC.empresa.value) { pintarMsgC(true, '¡Mensaje enviado! Te responderemos a la brevedad.'); formC.reset(); return; }
+      var nombre = $('#cNombre').value.trim();
+      var email = $('#cEmail').value.trim();
+      var tel = $('#cTel').value.replace(/\D/g, '');
+      var mensaje = $('#cMensaje').value.trim();
+      var e1 = marcarError('#ccNombre', nombre.length < 2);
+      var e2 = marcarError('#ccEmail', !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email));
+      var e3 = marcarError('#ccTel', tel !== '' && !/^\d{7,12}$/.test(tel));
+      var e4 = marcarError('#ccMensaje', mensaje.length < 5);
+      var e5 = marcarError('#ccConsent', !$('#cConsent').checked);
+      if (e1 || e2 || e3 || e4 || e5) {
+        var primero = $(e1 ? '#cNombre' : e2 ? '#cEmail' : e3 ? '#cTel' : e4 ? '#cMensaje' : '#cConsent');
+        if (primero) primero.focus();
+        return;
+      }
+      btnC.disabled = true;
+      pintarMsgC(true, 'Enviando tu mensaje…');
+      fetch('api/enviar-contacto.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nombre: nombre, email: email, telefono: tel, mensaje: mensaje,
+          consentimiento: true, empresa: formC.empresa.value
+        })
+      }).then(function (r) { return r.json().catch(function () { return { ok: r.ok }; }); }).then(function (res) {
+        btnC.disabled = false;
+        if (res && res.ok) {
+          pintarMsgC(true, '¡Mensaje enviado! Te responderemos a la brevedad a tu correo.');
+          formC.reset();
+        } else {
+          pintarMsgC(false, (res && res.error) || 'No se pudo enviar. Inténtalo de nuevo o escríbenos por WhatsApp.');
+        }
+      }).catch(function () {
+        btnC.disabled = false;
+        pintarMsgC(false, 'Sin conexión con el servidor. Revisa tu internet o escríbenos por WhatsApp.');
+      });
+    });
+  }
+
   /* ══════════ CARRUSEL DE TESTIMONIOS ══════════ */
   var track = $('#carruselTrack'), autoTimer = null, pausaUsuario = false, hoverPausa = false, indiceActual = 0;
   function tarjetas() { return $$('.t-card', track); }

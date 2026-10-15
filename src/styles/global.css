@@ -16,6 +16,8 @@
   --filtro:none;
 }
 *{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;overflow-x:clip}
+html,body{max-width:100%}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-alto) + 28px)}
 body{font-family:'Public Sans',system-ui,sans-serif;font-size:1.125rem;line-height:1.7;color:var(--tinta);background:var(--fondo);overflow-x:hidden}
 body.modal-abierto{overflow:hidden}
@@ -84,17 +86,18 @@ html[data-contraste="alto"]{--fondo:#fff;--fondo-suave:#fff;--tinta:#000;--tinta
 /* Barra superior: contacto, redes y cuenta al próximo entrenamiento (siempre visible, igual que el menú) */
 .topbar{background:var(--azul-osc);color:#CFE0F1;font-size:.9rem;max-height:var(--topbar-alto);overflow:hidden}
 .topbar-inner{width:min(1240px,96%);margin-inline:auto;min-height:var(--topbar-alto);display:flex;align-items:center;justify-content:space-between;gap:18px}
-.tb-izq{display:flex;align-items:center;gap:16px;min-width:0}
+.tb-izq{display:flex;align-items:center;gap:16px;min-width:0;overflow:hidden}
+.tb-izq a span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .topbar a{color:#CFE0F1;text-decoration:none;display:inline-flex;align-items:center;gap:7px;font-weight:600;transition:color .15s,background .15s;white-space:nowrap}
 .topbar a:hover{color:var(--oro)}
 .topbar svg{width:14px;height:14px;flex:none}
 .tb-cuenta{display:flex;align-items:center;gap:8px;margin:0;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:0 1 auto}
 .tb-cuenta svg{color:var(--oro);width:15px;height:15px}
-.tb-redes{display:flex;align-items:center;gap:8px}
+.tb-redes{display:flex;align-items:center;gap:8px;flex:none}
 .tb-redes a,.tb-redes button{width:27px;height:27px;justify-content:center;border:1px solid rgba(255,255,255,.35);border-radius:50%;background:transparent;cursor:pointer;color:#CFE0F1;transition:background .15s,color .15s,border-color .15s}
 .tb-redes a:hover,.tb-redes button:hover{background:var(--oro);border-color:var(--oro);color:var(--azul-osc)}
 
-@media(max-width:820px){.tb-mail{display:none}}
+@media(max-width:939px){.tb-mail{display:none}}
 @media(max-width:600px){
   .tb-tel span{display:none}
   .tb-izq{gap:10px}
@@ -249,7 +252,7 @@ html.a11y-pausar .punto-live::after{animation:none;opacity:0}
 .campo{margin-bottom:18px}
 .campo label{display:block;font-weight:700;color:var(--azul);margin-bottom:6px;font-size:1rem}
 .campo label small,.campo legend small{font-weight:500;color:var(--tinta-suave)}
-.campo input[type=text],.campo textarea{width:100%;min-height:56px;border:1.5px solid #CBD8E6;border-radius:14px;padding:14px 16px;font:400 1.05rem 'Public Sans',sans-serif;background:#FBFDFF;color:var(--tinta);transition:border .15s,box-shadow .15s}
+.campo input[type=text],.campo input[type=email],.campo input[type=tel],.campo textarea{width:100%;min-height:56px;border:1.5px solid #CBD8E6;border-radius:14px;padding:14px 16px;font:400 1.05rem 'Public Sans',sans-serif;background:#FBFDFF;color:var(--tinta);transition:border .15s,box-shadow .15s}
 .campo textarea{min-height:110px;resize:vertical}
 .campo input:focus,.campo textarea:focus{border-color:var(--azul-med);outline:none;box-shadow:0 0 0 4px rgba(33,102,174,.15)}
 .tel-wrap{display:flex;align-items:stretch;border:1.5px solid #CBD8E6;border-radius:14px;background:#FBFDFF;overflow:hidden;transition:border .15s,box-shadow .15s}
@@ -259,7 +262,7 @@ html.a11y-pausar .punto-live::after{animation:none;opacity:0}
 .tel-wrap input:focus{outline:none}
 .campo .error-campo{display:none;color:var(--rojo-osc);font-weight:700;font-size:.93rem;margin-top:6px}
 .campo.con-error .error-campo{display:flex;align-items:center;gap:6px}
-.campo.con-error .tel-wrap,.campo.con-error input[type=text]{border-color:var(--rojo)}
+.campo.con-error .tel-wrap,.campo.con-error input[type=text],.campo.con-error input[type=email],.campo.con-error input[type=tel]{border-color:var(--rojo)}
 .sugerencia{display:block;margin-top:10px;font-size:.96rem;color:var(--azul-med);font-weight:700;min-height:1.5em}
 .edades-grid{display:flex;flex-wrap:wrap;gap:10px}
 .edad-opcion{position:relative}
@@ -291,6 +294,11 @@ html.a11y-pausar .punto-live::after{animation:none;opacity:0}
 .consent a{font-weight:700}
 .honey{position:absolute;left:-9999px;opacity:0;height:0;width:0}
 .form-nota{font-size:.9rem;color:var(--tinta-suave);margin-top:12px}
+/* Formulario de contacto (footer): tarjeta centrada + mensajes de estado */
+.contacto-form{max-width:720px;margin:0 auto 48px}
+.form-msg{display:none;font-weight:700;margin-top:14px;padding:12px 16px;border-radius:12px}
+.form-msg.ok{display:block;color:#0d7038;background:#E7F6EE;border:1.5px solid #9ADBB8}
+.form-msg.error{display:block;color:var(--rojo-osc);background:var(--rojo-suave);border:1.5px solid #F3B6BC}
 @media(min-width:980px){.ins-grid{grid-template-columns:.9fr 1.1fr}}
 /* ══════════ QUÉ ES + GALERÍA ══════════ */
 #que-es{background:#fff;padding-top:170px}

@@ -35,6 +35,40 @@ const anio = new Date().getFullYear();
         <button class="link-claro" data-modal="accesibilidad"><svg class="mini" aria-hidden="true"><use href="#acc"/></svg> Declaración de accesibilidad</button>
       </div>
     </div>
+    <div class="contacto-form rev">
+      <form class="form-tarjeta" id="formContacto" novalidate>
+        <h3>Escríbenos por correo</h3>
+        <p style="color:var(--tinta-suave);margin-bottom:20px">¿Dudas, prensa o quieres apoyar al club? Te respondemos a la brevedad a tu correo.</p>
+        <div class="campo" id="ccNombre">
+          <label for="cNombre">Tu nombre *</label>
+          <input type="text" id="cNombre" name="nombre" autocomplete="name" required aria-describedby="err-c-nombre" />
+          <p class="error-campo" id="err-c-nombre">Por favor escribe tu nombre (mínimo 2 letras).</p>
+        </div>
+        <div class="campo" id="ccEmail">
+          <label for="cEmail">Tu correo *</label>
+          <input type="email" id="cEmail" name="email" autocomplete="email" placeholder="tucorreo@ejemplo.cl" required aria-describedby="err-c-email" />
+          <p class="error-campo" id="err-c-email">Escribe un correo válido para poder responderte.</p>
+        </div>
+        <div class="campo" id="ccTel">
+          <label for="cTel">Teléfono <small>(opcional)</small></label>
+          <input type="tel" id="cTel" name="telefono" autocomplete="tel-national" inputmode="tel" placeholder="+569 1234 5678" aria-describedby="err-c-tel" />
+          <p class="error-campo" id="err-c-tel">Revisa el número (solo dígitos, mínimo 7).</p>
+        </div>
+        <div class="campo" id="ccMensaje">
+          <label for="cMensaje">Tu mensaje *</label>
+          <textarea id="cMensaje" name="mensaje" placeholder="Cuéntanos en qué te ayudamos..." required aria-describedby="err-c-mensaje"></textarea>
+          <p class="error-campo" id="err-c-mensaje">Escribe tu mensaje (mínimo 5 caracteres).</p>
+        </div>
+        <div class="campo" id="ccConsent">
+          <label class="consent"><input type="checkbox" id="cConsent" required /> <span>He leído y acepto la <a href="#" data-modal="privacidad">Política de Privacidad</a> y autorizo el tratamiento de mis datos para responder mi mensaje. *</span></label>
+          <p class="error-campo" id="err-c-consent">Debes aceptar la Política de Privacidad para continuar.</p>
+        </div>
+        <input class="honey" type="text" name="empresa" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <button type="submit" class="cta" id="btnContacto" style="width:100%"><svg class="cta-pelota" aria-hidden="true"><use href="#mail"/></svg> Enviar mensaje</button>
+        <p class="form-msg" id="msgContacto" aria-live="polite"></p>
+        <p class="form-nota">Tus datos solo se usan para responder tu mensaje. Sin spam, prometido.</p>
+      </form>
+    </div>
     <div class="footer-fin">
       <a class="badge-fractal" href="https://fractalhost.cl" target="_blank" rel="noopener"><span class="f-dot" aria-hidden="true"></span> Sitio web desarrollado por Fractal Host</a>
       <p class="footer-copy">© <span id="anioFooter">{anio}</span> Club Deportivo Newcom Escuela 18 de Septiembre · Punta Arenas, Magallanes</p>
