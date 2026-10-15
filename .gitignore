@@ -2,3 +2,6 @@ node_modules/
 .astro/
 .DS_Store
 npm-debug.log*
+# Librería PHPMailer (solo despliegue cPanel: se copia al ZIP, no al repo)
+public/api/PHPMailer/
+dist/api/PHPMailer/

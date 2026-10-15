@@ -290,6 +290,24 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
       if (primero) primero.focus();
       return;
     }
+    /* Copia por correo al club (en GitHub Pages no existe el endpoint: el error se ignora) */
+    try {
+      fetch('api/enviar-reserva.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nombre: d.nombre,
+          edad: d.edad,
+          telefono: d.tel,
+          dia: d.dia,
+          diaTexto: d.diaTexto,
+          exp: d.exp,
+          mensaje: d.mensaje,
+          consentimiento: true,
+          empresa: form.empresa.value
+        })
+      }).catch(function () { /* sin backend: solo WhatsApp */ });
+    } catch (e) { /* noop */ }
     window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + mensajeWa(d), '_blank', 'noopener');
   });
 

@@ -14,9 +14,6 @@
   --sombra-cta:0 8px 22px rgba(224,45,60,.35),0 3px 8px rgba(224,45,60,.25);
   --foco-anillo:0 0 0 3px #fff,0 0 0 6px var(--azul-med);
   --filtro:none;
-  /* ✏️ Imágenes de respaldo (footer y variantes sin AVIF) */
-  --img-avif:url('/newcom/img/fondo-footer-newcom-punta-arenas.avif');
-  --img-fallback:url('/newcom/img/og-newcom-punta-arenas.jpg');
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-alto) + 28px)}
@@ -511,12 +508,12 @@ li.tip-abierto .tip,li:hover .tip,li:focus-visible .tip{transform:translateX(-50
 /* ══════════ FOOTER con imagen AVIF + overlay ══════════ */
 .cierre{position:relative;isolation:isolate;overflow:hidden;color:#fff;padding:100px 0 40px;border-radius:36px 36px 0 0;margin-top:-20px;background-color:var(--azul-osc)}
 /* Capa de fondo con efecto parallax (se mueve con el scroll vía JS) */
-.cierre-fondo{position:absolute;left:0;right:0;top:-25%;bottom:-25%;z-index:1;background-color:var(--azul-osc);background-image:url('/newcom/img/fondo-footer-newcom-punta-arenas.avif');background-position:center;background-size:cover;background-repeat:no-repeat;transform:translate3d(0,var(--parallax,0px),0) scale(1.05);will-change:transform;pointer-events:none}
+.cierre-fondo{position:absolute;left:0;right:0;top:-25%;bottom:-25%;z-index:1;background-color:var(--azul-osc);background-position:center;background-size:cover;background-repeat:no-repeat;transform:translate3d(0,var(--parallax,0px),0) scale(1.05);will-change:transform;pointer-events:none}
 /* Overlay azul para asegurar contraste del texto */
 .cierre::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(11,37,64,.62) 0%,rgba(11,37,64,.74) 48%,rgba(11,37,64,.90) 100%)}
 .cierre > .contenedor{position:relative;z-index:3}
 @media (prefers-reduced-motion:reduce){.cierre-fondo{transform:none;top:0;bottom:0}}
-html.a11y-ocultarimg .cierre-fondo{background-image:none}
+html.a11y-ocultarimg .cierre-fondo{background-image:none!important}
 .cierre h2{color:#fff;font-size:clamp(2rem,5.2vw,3.2rem)}
 .cierre h2 span{color:var(--oro)}
 .cierre-ctas{display:flex;gap:14px;flex-wrap:wrap;margin:30px 0 48px}
