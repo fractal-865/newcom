@@ -304,7 +304,13 @@ html.a11y-pausar .punto-live::after{animation:none;opacity:0}
 .form-msg{display:none;font-weight:700;margin-top:14px;padding:12px 16px;border-radius:12px}
 .form-msg.ok{display:block;color:#0d7038;background:#E7F6EE;border:1.5px solid #9ADBB8}
 .form-msg.error{display:block;color:var(--rojo-osc);background:var(--rojo-suave);border:1.5px solid #F3B6BC}
-@media(min-width:980px){.ins-grid{grid-template-columns:.9fr 1.1fr}}
+/* Pasos sticky también en móvil/tablet: siguen la pantalla sin salir de la sección */
+@media(max-width:979px){
+  .ins-sticky{position:sticky;top:calc(var(--header-alto) + var(--topbar-alto) + 10px);z-index:5;background:#fff;border:1px solid var(--borde);border-radius:18px;padding:16px 18px;box-shadow:var(--elev-2)}
+  .ins-sticky .pasos{margin:0 0 8px}
+  .ins-sticky .centro{margin:0;font-size:.95rem}
+}
+@media(min-width:980px){.ins-grid{grid-template-columns:.85fr 1.15fr}}
 /* ══════════ QUÉ ES + GALERÍA ══════════ */
 #que-es{background:#fff;padding-top:170px}
 .que-grid{display:grid;gap:48px;align-items:start}
@@ -343,7 +349,7 @@ html.a11y-pausar .punto-live::after{animation:none;opacity:0}
   .gal-flecha,.carr-flecha{width:44px;height:44px}
 }
 /* Lightbox: foto ampliada */
-.lightbox{position:fixed;inset:0;z-index:130;display:grid;place-items:center;padding:24px}
+.lightbox{position:fixed;inset:0;z-index:260;display:grid;place-items:center;padding:24px}
 .lightbox[hidden]{display:none}
 .lb-fondo{position:absolute;inset:0;background:rgba(8,18,32,.93);backdrop-filter:blur(6px);animation:lbFade .28s ease both}
 .lb-caja{position:relative;z-index:2;width:min(1000px,92vw);animation:lbEntra .35s cubic-bezier(.22,1,.36,1) both}
@@ -361,7 +367,11 @@ html.a11y-pausar .punto-live::after{animation:none;opacity:0}
 @media(max-width:680px){
   #lbAnt{left:8px}
   #lbSig{right:8px}
-  .lb-cerrar{top:-12px;right:-4px}
+  /* En móvil la caja baja para que el cerrar quede bajo el menú y sea pulsable */
+  .lightbox{place-items:start center;padding:calc(var(--header-alto) + var(--topbar-alto) + 8px) 12px 16px}
+  .lb-caja{width:min(1000px,100%)}
+  .lb-cerrar{top:-14px;right:0}
+  .lb-caja>img{max-height:56vh}
 }
 /* Acordeones animados */
 .acordeon{border:1px solid var(--borde);border-radius:16px;margin-bottom:12px;overflow:hidden;background:#fff;box-shadow:var(--elev-1)}
