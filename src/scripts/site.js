@@ -250,6 +250,10 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
       $('#cDia').classList.remove('con-error');
     });
   });
+  /* Reserva: limpia el error en vivo al corregir (igual que contacto) */
+  validarEnVivo('#cNombre', function () { return $('#fNombre').value.trim(); }, function (v) { return v.length >= 2; });
+  validarEnVivo('#cMensaje', function () { return $('#fMensaje').value.trim(); }, function (v) { return true; });
+  validarEnVivo('#cConsent', function () { return $('#fConsent').checked; }, function (v) { return !!v; });
   function marcarError(id, conError) {
     var caja = $(id);
     if (!caja) return conError;
@@ -261,6 +265,21 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
     }
     return conError;
   }
+  /* Revalida un campo en vivo, pero solo si ya mostraba error (sin errores prematuros) */
+  function validarEnVivo(cajaId, obtenerValor, esValido) {
+    var caja = $(cajaId);
+    if (!caja) return;
+    var controles = caja.querySelectorAll('input,textarea,select');
+    function revalidar() {
+      if (!caja.classList.contains('con-error')) return;
+      marcarError(cajaId, !esValido(obtenerValor()));
+    }
+    for (var i = 0; i < controles.length; i++) {
+      controles[i].addEventListener('input', revalidar);
+      controles[i].addEventListener('change', revalidar);
+    }
+  }
+  function esEmailValido(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
   function datosForm() {
     var dia = form.querySelector('input[name=dia]:checked');
     var exp = form.querySelector('input[name=exp]:checked');
@@ -332,7 +351,7 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
       var tel = $('#cTel').value.replace(/\D/g, '');
       var mensaje = $('#cMensaje').value.trim();
       var e1 = marcarError('#ccNombre', nombre.length < 2);
-      var e2 = marcarError('#ccEmail', !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email));
+      var e2 = marcarError('#ccEmail', !esEmailValido(email));
       var e3 = marcarError('#ccTel', tel !== '' && !/^\d{7,12}$/.test(tel));
       var e4 = marcarError('#ccMensaje', mensaje.length < 5);
       var e5 = marcarError('#ccConsent', !$('#cConsent').checked);
@@ -363,6 +382,12 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
         pintarMsgC(false, 'Sin conexión con el servidor. Revisa tu internet o escríbenos por WhatsApp.');
       });
     });
+    /* Contacto: limpia el error en vivo al corregir (igual que reserva) */
+    validarEnVivo('#ccNombre', function () { return $('#cNombre').value.trim(); }, function (v) { return v.length >= 2; });
+    validarEnVivo('#ccEmail', function () { return $('#cEmail').value.trim(); }, function (v) { return esEmailValido(v); });
+    validarEnVivo('#ccTel', function () { return $('#cTel').value.replace(/\D/g, ''); }, function (v) { return v === '' || /^\d{7,12}$/.test(v); });
+    validarEnVivo('#ccMensaje', function () { return $('#cMensaje').value.trim(); }, function (v) { return v.length >= 5; });
+    validarEnVivo('#ccConsent', function () { return $('#cConsent').checked; }, function (v) { return !!v; });
   }
 
   /* ══════════ CORREO BAJO DEMANDA (anti-spam) ══════════ */
