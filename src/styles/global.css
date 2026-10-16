@@ -306,9 +306,12 @@ html.a11y-pausar .punto-live::after{animation:none;opacity:0}
 .form-msg.error{display:block;color:var(--rojo-osc);background:var(--rojo-suave);border:1.5px solid #F3B6BC}
 /* Pasos sticky también en móvil/tablet: siguen la pantalla sin salir de la sección */
 @media(max-width:979px){
-  .ins-sticky{position:sticky;top:calc(var(--header-alto) + var(--topbar-alto) + 10px);z-index:5;background:#fff;border:1px solid var(--borde);border-radius:18px;padding:16px 18px;box-shadow:var(--elev-2)}
-  .ins-sticky .pasos{margin:0 0 8px}
-  .ins-sticky .centro{margin:0;font-size:.95rem}
+  .ins-sticky{position:sticky;top:calc(var(--header-alto) + var(--topbar-alto) + 10px);z-index:5;background:#fff;border:1px solid var(--borde);border-radius:18px;padding:12px 14px;box-shadow:var(--elev-2)}
+  .ins-sticky .pasos{margin:0;gap:8px}
+  .ins-sticky .paso{padding:10px 12px;gap:10px}
+  .ins-sticky .paso-num{width:34px;height:34px;font-size:1rem;border-radius:10px}
+  .ins-sticky .paso strong{font-size:.95rem}
+  .ins-sticky .paso small,.ins-sticky .centro{display:none}
 }
 @media(min-width:980px){.ins-grid{grid-template-columns:.85fr 1.15fr}}
 /* ══════════ QUÉ ES + GALERÍA ══════════ */
