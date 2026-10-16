@@ -28,7 +28,8 @@ const anio = new Date().getFullYear();
         <a href="tel:+56996405463"><svg class="mini" aria-hidden="true"><use href="#tel"/></svg> <span>{CONTACTO.telefonos[1]}</span></a>
       </div>
       <div class="contacto-card"><h3><svg aria-hidden="true"><use href="#mail"/></svg> Correo</h3>
-        <a href={`mailto:${CONTACTO.email}`}><svg class="mini" aria-hidden="true"><use href="#mail"/></svg> <span>{CONTACTO.email}</span></a>
+        <button class="link-claro" id="btnMostrarCorreo" type="button" aria-expanded="false" aria-controls="correoClub"><svg class="mini" aria-hidden="true"><use href="#mail"/></svg> <span>Mostrar correo del club</span></button>
+        <span id="correoClub" aria-live="polite"></span>
         <a href="#donde"><svg class="mini" aria-hidden="true"><use href="#cal"/></svg> Ver horarios de entrenamiento</a>
       </div>
       <div class="contacto-card"><h3><svg aria-hidden="true"><use href="#corazon"/></svg> Redes y legal</h3>

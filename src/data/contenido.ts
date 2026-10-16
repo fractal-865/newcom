@@ -12,7 +12,8 @@ export const WHATSAPP_NUMBER = '56999915690';
 export const CONFIG = { urlSitio: 'https://newcompuntaarenas.cl/' };
 
 export const CONTACTO = {
-  email: 'contacto@newcompuntaarenas.cl',
+  // El correo real vive solo en public/api/config-correo.php (servidor)
+  // y se entrega bajo demanda vía api/contacto-email.php. No exponerlo aquí.
   telefonos: ['+56 9 9991 5690', '+56 9 9640 5463'],
 };
 
@@ -218,7 +219,7 @@ export const FAQ = [
 export const TEXTOS_LEGALES: Record<string, string> = {
   privacidad:
     '<div class="borrador">BORRADOR LEY 21.719 — PENDIENTE DE REVISIÓN POR ABOGADO ANTES DE PUBLICAR.</div>' +
-    '<h3>1. Responsable del tratamiento</h3><p>[NOMBRE DEL CLUB] · RUT: [RUT] · Correo de contacto: [CORREO DE CONTACTO] (contacto@newcompuntaarenas.cl). Domicilio: Punta Arenas, Región de Magallanes, Chile.</p>' +
+    '<h3>1. Responsable del tratamiento</h3><p>[NOMBRE DEL CLUB] · RUT: [RUT] · Correo de contacto: [CORREO DE CONTACTO] (o formulario de contacto de este sitio). Domicilio: Punta Arenas, Región de Magallanes, Chile.</p>' +
     '<h3>2. Datos personales que recogemos</h3><ul><li>Nombre.</li><li>Teléfono (WhatsApp).</li><li>Rango de edad y día de interés (formulario de clase de prueba).</li><li>Mensaje opcional que decidas enviarnos.</li></ul>' +
     '<h3>3. Finalidad del tratamiento</h3><p>Gestionar tu solicitud de clase de prueba, contactarte por WhatsApp o llamada para coordinar tu visita, y responder tus consultas sobre el club.</p>' +
     '<h3>4. Base de licitud</h3><p>Tu consentimiento expreso, manifestado al marcar la casilla de aceptación del formulario (art. 4 y ss., Ley N° 21.719).</p>' +
@@ -233,7 +234,7 @@ export const TEXTOS_LEGALES: Record<string, string> = {
     '<h3>3. Propiedad intelectual</h3><p>Los contenidos, logo e imágenes del club están protegidos.</p>' +
     '<h3>4. Responsabilidad</h3><p>El club se reserva el derecho de modificar horarios, sedes y actividades informadas en este sitio.</p>',
   accesibilidad:
-    '<h3>Declaración de accesibilidad</h3><p>Este sitio se diseñó para cumplir WCAG 2.1 AA: texto base 18 px, contraste AA, navegación por teclado, foco visible, y un panel de ajustes propios (tamaño de texto hasta 200 %, alto contraste, escala de grises, filtros de daltonismo, fuente legible, espaciado, resaltado de enlaces, pausa de animaciones, guía de lectura, cursor grande y lectura en voz alta).</p><p>Si tienes alguna dificultad para usar el sitio, escríbenos a contacto@newcompuntaarenas.cl o por WhatsApp; te ayudaremos con gusto.</p>',
+    '<h3>Declaración de accesibilidad</h3><p>Este sitio se diseñó para cumplir WCAG 2.1 AA: texto base 18 px, contraste AA, navegación por teclado, foco visible, y un panel de ajustes propios (tamaño de texto hasta 200 %, alto contraste, escala de grises, filtros de daltonismo, fuente legible, espaciado, resaltado de enlaces, pausa de animaciones, guía de lectura, cursor grande y lectura en voz alta).</p><p>Si tienes alguna dificultad para usar el sitio, escríbenos mediante el formulario de contacto o por WhatsApp; te ayudaremos con gusto.</p>',
   cookies:
     '<div class="borrador">BORRADOR LEY 21.719 — PENDIENTE DE REVISIÓN POR ABOGADO ANTES DE PUBLICAR.</div>' +
     '<h3>1. Qué cookies usamos</h3><p>Este sitio usa solo las cookies mínimas para funcionar. No instalamos cookies de rastreo propias ni vendemos datos.</p>' +
@@ -258,7 +259,6 @@ export function jsonLdSportsClub() {
     name: 'Club Deportivo Newcom Escuela 18 de Septiembre',
     sport: 'Newcom (tátumbol, vóleibol adaptado)',
     foundingDate: '2025-04-12',
-    email: CONTACTO.email,
     telephone: CONTACTO.telefonos[0],
     address: {
       '@type': 'PostalAddress',

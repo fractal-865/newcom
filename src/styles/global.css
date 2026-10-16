@@ -262,7 +262,9 @@ html.a11y-pausar .punto-live::after{animation:none;opacity:0}
 .tel-wrap input:focus{outline:none}
 .campo .error-campo{display:none;color:var(--rojo-osc);font-weight:700;font-size:.93rem;margin-top:6px}
 .campo.con-error .error-campo{display:flex;align-items:center;gap:6px}
-.campo.con-error .tel-wrap,.campo.con-error input[type=text],.campo.con-error input[type=email],.campo.con-error input[type=tel]{border-color:var(--rojo)}
+.campo.con-error .tel-wrap,.campo.con-error input[type=text],.campo.con-error input[type=email],.campo.con-error input[type=tel],.campo.con-error textarea{border-color:var(--rojo)}
+.campo.con-error .consent input{outline:3px solid var(--rojo);outline-offset:2px}
+fieldset.campo.con-error{outline:3px solid var(--rojo);outline-offset:4px;border-radius:16px}
 .sugerencia{display:block;margin-top:10px;font-size:.96rem;color:var(--azul-med);font-weight:700;min-height:1.5em}
 .edades-grid{display:flex;flex-wrap:wrap;gap:10px}
 .edad-opcion{position:relative}

@@ -91,6 +91,12 @@ try {
   $mail->SMTPAuth = true;
   $mail->Username = SMTP_USER;
   $mail->Password = SMTP_PASS;
+  // En hosting compartido el certificado suele ser autofirmado: se relaja
+  // la verificación SSL solo para esta conexión SMTP saliente.
+  $mail->Timeout = 15;
+  $mail->SMTPOptions = [
+    'ssl' => ['verify_peer' => false, 'verify_peer_name' => false, 'allow_self_signed' => true],
+  ];
   $mail->setFrom(SMTP_USER, MAIL_NOMBRE);
   $mail->addAddress(MAIL_DESTINO, MAIL_NOMBRE);
   $mail->addReplyTo($email, $nombre);

@@ -251,7 +251,14 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
     });
   });
   function marcarError(id, conError) {
-    $(id).classList.toggle('con-error', conError);
+    var caja = $(id);
+    if (!caja) return conError;
+    caja.classList.toggle('con-error', conError);
+    var controles = caja.querySelectorAll('input,textarea,select');
+    for (var i = 0; i < controles.length; i++) {
+      if (conError) controles[i].setAttribute('aria-invalid', 'true');
+      else controles[i].removeAttribute('aria-invalid');
+    }
     return conError;
   }
   function datosForm() {
@@ -354,6 +361,35 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
       }).catch(function () {
         btnC.disabled = false;
         pintarMsgC(false, 'Sin conexión con el servidor. Revisa tu internet o escríbenos por WhatsApp.');
+      });
+    });
+  }
+
+  /* ══════════ CORREO BAJO DEMANDA (anti-spam) ══════════ */
+  var btnCorreo = $('#btnMostrarCorreo');
+  if (btnCorreo) {
+    btnCorreo.addEventListener('click', function () {
+      var etiqueta = btnCorreo.querySelector('span');
+      var textoOriginal = etiqueta ? etiqueta.textContent : '';
+      btnCorreo.disabled = true;
+      if (etiqueta) etiqueta.textContent = 'Cargando…';
+      fetch('api/contacto-email.php', { method: 'POST' }).then(function (r) { return r.json(); }).then(function (res) {
+        if (res && res.ok && res.email) {
+          var a = document.createElement('a');
+          a.href = 'mailto:' + res.email;
+          var icono = btnCorreo.querySelector('svg');
+          if (icono) a.appendChild(icono.cloneNode(true));
+          a.appendChild(document.createTextNode(' ' + res.email));
+          btnCorreo.replaceWith(a);
+          a.focus();
+        } else {
+          throw new Error('sin-correo');
+        }
+      }).catch(function () {
+        btnCorreo.disabled = false;
+        if (etiqueta) etiqueta.textContent = textoOriginal || 'Mostrar correo del club';
+        var aviso = $('#correoClub');
+        if (aviso) aviso.textContent = 'No se pudo mostrar el correo. Usa el formulario de contacto.';
       });
     });
   }
