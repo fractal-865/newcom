@@ -24,7 +24,7 @@ import { TESTIMONIOS } from '../data/contenido';
           </article>
         ))}
       </div>
-      <div class="puntos" id="carruselPuntos" role="tablist" aria-label="Ir al testimonio">
+      <div class="puntos" id="carruselPuntos" role="group" aria-label="Ir al testimonio">
         {TESTIMONIOS.map((_, i) => (
           <button aria-label={`Ir al testimonio ${i + 1}`} data-i={i}></button>
         ))}

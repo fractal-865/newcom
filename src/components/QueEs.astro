@@ -1,5 +1,5 @@
 ---
-import { FOTOS } from '../data/contenido';
+import { FOTOS, srcsetGaleria } from '../data/contenido';
 ---
 
 <!-- ====== QUÉ ES ====== -->
@@ -31,6 +31,8 @@ import { FOTOS } from '../data/contenido';
                 class:list={['g-img', i === 0 && 'activa']}
                 data-cap={f.cap}
                 src={f.src}
+                srcset={srcsetGaleria(f.src, f.w)}
+                sizes="(max-width:899px) 92vw, 540px"
                 alt={f.alt}
                 width="1200"
                 height="800"
@@ -38,9 +40,9 @@ import { FOTOS } from '../data/contenido';
                 decoding="async"
               />
             ))}
-            <span class="galeria-cap"><svg aria-hidden="true"><use href="#pelota"/></svg><span id="galeriaCapTexto" aria-live="polite">{FOTOS[0].cap}</span></span>
             <span class="g-lupa" aria-hidden="true"><svg><use href="#lupa"/></svg></span>
           </div>
+          <span class="galeria-cap"><svg aria-hidden="true"><use href="#pelota"/></svg><span id="galeriaCapTexto" aria-live="polite">{FOTOS[0].cap}</span></span>
           <button class="gal-flecha gal-izq" id="btnGalAnt" aria-label="Foto anterior"><svg aria-hidden="true"><use href="#flecha-izq"/></svg></button>
           <button class="gal-flecha gal-der" id="btnGalSig" aria-label="Foto siguiente"><svg aria-hidden="true"><use href="#flecha-der"/></svg></button>
         </div>

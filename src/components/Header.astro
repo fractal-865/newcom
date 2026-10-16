@@ -14,7 +14,7 @@ const mapaEscuela = 'https://www.google.com/maps/search/?api=1&query=Escuela+18+
     <div class="topbar-inner">
       <div class="tb-izq">
         <a class="tb-tel" href={`tel:+${WHATSAPP_NUMBER}`}><svg aria-hidden="true"><use href="#tel"/></svg><span>{CONTACTO.telefonos[0]}</span></a>
-        <a class="tb-mail" href="#contacto" aria-label="Ir al formulario de contacto"><svg aria-hidden="true"><use href="#mail"/></svg><span>Escríbenos</span></a>
+        <a class="tb-mail" href="#contacto" aria-label="Escríbenos: ir al formulario de contacto"><svg aria-hidden="true"><use href="#mail"/></svg><span>Escríbenos</span></a>
       </div>
       <p class="tb-cuenta" id="tbCuenta">
         <svg aria-hidden="true"><use href="#reloj"/></svg>
@@ -38,13 +38,13 @@ const mapaEscuela = 'https://www.google.com/maps/search/?api=1&query=Escuela+18+
         <div class="mega" id="megaNosotros">
           <div class="mega-grid dos">
             <div class="mega-col">
-              <h2>Comunidad</h2>
+              <span class="mega-col-tit">Comunidad</span>
               <a class="mega-link" href="#familia"><span class="mega-ico"><svg aria-hidden="true"><use href="#corazon"/></svg></span><span><strong>Más que un club</strong><small>Una gran familia de barrio</small></span></a>
               <a class="mega-link" href="#historia"><span class="mega-ico"><svg aria-hidden="true"><use href="#star"/></svg></span><span><strong>Nuestra historia</strong><small>Corazón de barrio desde 2025</small></span></a>
               <a class="mega-link" href="#medios"><span class="mega-ico"><svg aria-hidden="true"><use href="#mail"/></svg></span><span><strong>En los medios</strong><small>Prensa y radio locales</small></span></a>
             </div>
             <div class="mega-col">
-              <h2>Personas</h2>
+              <span class="mega-col-tit">Personas</span>
               <a class="mega-link" href="#equipo"><span class="mega-ico"><svg aria-hidden="true"><use href="#pareja"/></svg></span><span><strong>Quién guía al equipo</strong><small>Directiva y cuerpo técnico</small></span></a>
               <a class="mega-link" href="#gente"><span class="mega-ico"><svg aria-hidden="true"><use href="#corazon"/></svg></span><span><strong>Nuestra gente</strong><small>Testimonios del equipo</small></span></a>
             </div>
@@ -58,12 +58,12 @@ const mapaEscuela = 'https://www.google.com/maps/search/?api=1&query=Escuela+18+
         <div class="mega" id="megaHorarios">
           <div class="mega-grid dos">
             <div class="mega-col">
-              <h2>Entrenamientos</h2>
+              <span class="mega-col-tit">Entrenamientos</span>
               <a class="mega-link" href="#horarios"><span class="mega-ico"><svg aria-hidden="true"><use href="#cal"/></svg></span><span><strong>Cuándo entrenamos</strong><small>Martes, jueves y sábados</small></span></a>
               <a class="mega-link" href="#llegar"><span class="mega-ico"><svg aria-hidden="true"><use href="#pin"/></svg></span><span><strong>Cómo llegar</strong><small>Mapas de ambas sedes</small></span></a>
             </div>
             <div class="mega-col">
-              <h2>Prepara tu visita</h2>
+              <span class="mega-col-tit">Prepara tu visita</span>
               <a class="mega-link" href="#categorias"><span class="mega-ico"><svg aria-hidden="true"><use href="#pareja"/></svg></span><span><strong>Categorías</strong><small>+40 · +50 · +60 · +68</small></span></a>
               <a class="mega-link" href="#llevar"><span class="mega-ico"><svg aria-hidden="true"><use href="#check"/></svg></span><span><strong>Tu bolso Newcomer</strong><small>Qué llevar a tu primera clase</small></span></a>
             </div>
@@ -75,7 +75,7 @@ const mapaEscuela = 'https://www.google.com/maps/search/?api=1&query=Escuela+18+
         <a class="nav-btn" href="#faq" aria-expanded="false" aria-controls="megaPreguntas" aria-haspopup="true" data-spylist="faq">Preguntas <svg class="chev" aria-hidden="true"><use href="#chev"/></svg></a>
         <div class="mega" id="megaPreguntas" style="width:min(440px,92vw)">
           <div class="mega-col">
-            <h2>Las más consultadas</h2>
+            <span class="mega-col-tit">Las más consultadas</span>
             <a class="mega-link" href="#faq" data-abrefaq="0"><span class="mega-ico"><svg aria-hidden="true"><use href="#check"/></svg></span><span><strong>¿Necesito experiencia?</strong></span></a>
             <a class="mega-link" href="#faq" data-abrefaq="1"><span class="mega-ico"><svg aria-hidden="true"><use href="#pareja"/></svg></span><span><strong>¿Hay límite de edad?</strong></span></a>
             <a class="mega-link" href="#faq" data-abrefaq="2"><span class="mega-ico"><svg aria-hidden="true"><use href="#star"/></svg></span><span><strong>¿Tiene costo participar?</strong></span></a>

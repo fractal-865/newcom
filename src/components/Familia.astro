@@ -1,5 +1,5 @@
 ---
-import { MOSAICO } from '../data/contenido';
+import { MOSAICO, srcsetMosaico } from '../data/contenido';
 const instagram = 'https://www.instagram.com/newcom.escuela18desep.puq/';
 const facebook = 'https://web.facebook.com/people/Club-Deportivo-Newcom-18-de-Septiembre/61572076650262/';
 ---
@@ -16,6 +16,8 @@ const facebook = 'https://web.facebook.com/people/Club-Deportivo-Newcom-18-de-Se
               <img
                 class={`mosaico-slide ${m.cls}`}
                 src={m.src}
+                srcset={srcsetMosaico(m.src, m.w)}
+                sizes="(max-width:639px) 46vw, (max-width:1023px) 31vw, 224px"
                 alt={m.alt}
                 data-cap={m.cap}
                 style={`object-position:${m.pos}`}

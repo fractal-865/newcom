@@ -643,7 +643,7 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
   function lbPintar() {
     var im = lbSet[lbIdx];
     if (!im) return;
-    $('#lbImg').src = im.currentSrc || im.src;
+    $('#lbImg').src = im.src;
     $('#lbImg').alt = im.alt;
     $('#lbCap').textContent = im.dataset.cap || im.alt || '';
   }

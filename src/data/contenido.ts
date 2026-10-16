@@ -25,21 +25,43 @@ export const HERO_FALLBACK = {
   height: 1097,
 };
 
+// srcset responsivo para las miniaturas del mosaico: variante 480px y,
+// si la foto original es grande, también 960px (pantallas de alta densidad).
+export function srcsetMosaico(src: string, ancho: number): string {
+  const ws = ancho > 960 ? [480, 960] : [480];
+  return ws
+    .map((w) => `${src.replace(/\.avif$/, `-${w}.avif`)} ${w}w`)
+    .concat(`${src} ${ancho}w`)
+    .join(', ');
+}
+
+// srcset responsivo para la galería grande: 600px y 960px.
+export function srcsetGaleria(src: string, ancho: number): string {
+  const ws = ancho > 960 ? [600, 960] : [600];
+  return ws
+    .map((w) => `${src.replace(/\.avif$/, `-${w}.avif`)} ${w}w`)
+    .concat(`${src} ${ancho}w`)
+    .join(', ');
+}
+
 export const FOTOS = [
   {
     src: `${BASE}img/newcom-punta-arenas-potencia-tus-anos.avif`,
     alt: 'Jugador del Club Newcom de Punta Arenas rematando el balón sobre la red durante un partido de vóleibol adaptado',
     cap: 'Newcom Punta Arenas: potencia tus años',
+    w: 1148,
   },
   {
     src: `${BASE}img/newcom-punta-arenas-unete-a-nuestro-equipo.avif`,
     alt: 'Equipo del Club Newcom de Punta Arenas en formación defensiva dentro del gimnasio',
     cap: 'El Newcom nos une',
+    w: 1126,
   },
   {
     src: `${BASE}img/newcom-punta-arenas-entrena-tu-defensa.avif`,
     alt: 'Jugadora del Club Newcom de Punta Arenas defendiendo el balón con las manos en el gimnasio',
     cap: 'Entrena tu defensa con nosotros',
+    w: 981,
   },
 ];
 
@@ -259,6 +281,8 @@ export function jsonLdSportsClub() {
     name: 'Club Deportivo Newcom Escuela 18 de Septiembre',
     sport: 'Newcom (tátumbol, vóleibol adaptado)',
     foundingDate: '2025-04-12',
+    url: CONFIG.urlSitio,
+    image: CONFIG.urlSitio + 'img/og-newcom-punta-arenas.jpg',
     telephone: CONTACTO.telefonos[0],
     address: {
       '@type': 'PostalAddress',
@@ -286,5 +310,16 @@ export function jsonLdFaqPage() {
       name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: f.a },
     })),
+  };
+}
+
+export function jsonLdWebSite() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Club Deportivo Newcom Escuela 18 de Septiembre',
+    alternateName: 'Newcom Punta Arenas',
+    url: CONFIG.urlSitio,
+    inLanguage: 'es-CL',
   };
 }

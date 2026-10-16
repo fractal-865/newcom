@@ -1,13 +1,15 @@
 ---
 import { HERO_FALLBACK } from '../data/contenido';
 const BASE = import.meta.env.BASE_URL;
+const heroBase = `${BASE}img/newcom-punta-arenas-hero-voleibol`;
+const heroSrcset = `${heroBase}-768.avif 768w, ${heroBase}-1280.avif 1280w, ${heroBase}.avif 1920w`;
 ---
 
 <!-- ====== HERO: 1 columna centrada + fondo AVIF ====== -->
 <section class="hero" id="inicio" aria-labelledby="h1-principal">
   <picture class="hero-bg" aria-hidden="true">
-    <source type="image/avif" srcset={BASE + 'img/newcom-punta-arenas-hero-voleibol.avif'} />
-    <img src={HERO_FALLBACK.src} alt="" width={HERO_FALLBACK.width} height={HERO_FALLBACK.height} fetchpriority="high" decoding="async" />
+    <source type="image/avif" srcset={heroSrcset} sizes="100vw" />
+    <img src={HERO_FALLBACK.src} srcset={heroSrcset} sizes="100vw" alt="" width={HERO_FALLBACK.width} height={HERO_FALLBACK.height} fetchpriority="high" decoding="async" />
   </picture>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="contenedor hero-centro">
