@@ -621,6 +621,7 @@ html.a11y-ocultarimg .cierre-fondo{background-image:none!important}
 .cookie-btn:hover{border-color:var(--azul-med)}
 .cookie-btn.primario{background:var(--azul);border-color:var(--azul);color:#fff}
 .cookies-prefs{display:grid;gap:10px;margin-top:14px;border-top:1px solid var(--fondo-suave);padding-top:14px}
+.cookies-prefs[hidden]{display:none}
 .cookies-prefs label{display:flex;gap:10px;align-items:center;font-size:.9rem;font-weight:600;color:var(--tinta)}
 .cookies-prefs label small{font-weight:500;color:var(--tinta-suave)}
 .cookies-prefs input{width:20px;height:20px;flex:none;accent-color:var(--azul-med)}
