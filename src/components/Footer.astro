@@ -46,27 +46,27 @@ const anio = new Date().getFullYear();
         <h3>Escríbenos por correo</h3>
         <p style="color:var(--tinta-suave);margin-bottom:20px">¿Dudas, prensa o quieres apoyar al club? Te respondemos a la brevedad a tu correo.</p>
         <div class="campo" id="ccNombre">
-          <label for="cNombre">Tu nombre *</label>
-          <input type="text" id="cNombre" name="nombre" autocomplete="name" required aria-describedby="err-c-nombre" />
+          <label for="ctNombre">Tu nombre *</label>
+          <input type="text" id="ctNombre" name="nombre" autocomplete="name" required aria-describedby="err-c-nombre" />
           <p class="error-campo" id="err-c-nombre">Por favor escribe tu nombre (mínimo 2 letras).</p>
         </div>
         <div class="campo" id="ccEmail">
-          <label for="cEmail">Tu correo *</label>
-          <input type="email" id="cEmail" name="email" autocomplete="email" placeholder="tucorreo@ejemplo.cl" required aria-describedby="err-c-email" />
+          <label for="ctEmail">Tu correo *</label>
+          <input type="email" id="ctEmail" name="email" autocomplete="email" placeholder="tucorreo@ejemplo.cl" required aria-describedby="err-c-email" />
           <p class="error-campo" id="err-c-email">Escribe un correo válido para poder responderte.</p>
         </div>
         <div class="campo" id="ccTel">
-          <label for="cTel">Teléfono <small>(opcional)</small></label>
-          <input type="tel" id="cTel" name="telefono" autocomplete="tel-national" inputmode="tel" placeholder="+569 1234 5678" aria-describedby="err-c-tel" />
+          <label for="ctTel">Teléfono <small>(opcional)</small></label>
+          <input type="tel" id="ctTel" name="telefono" autocomplete="tel-national" inputmode="tel" placeholder="+569 1234 5678" aria-describedby="err-c-tel" />
           <p class="error-campo" id="err-c-tel">Revisa el número (solo dígitos, mínimo 7).</p>
         </div>
         <div class="campo" id="ccMensaje">
-          <label for="cMensaje">Tu mensaje *</label>
-          <textarea id="cMensaje" name="mensaje" placeholder="Cuéntanos en qué te ayudamos..." required aria-describedby="err-c-mensaje"></textarea>
+          <label for="ctMensaje">Tu mensaje *</label>
+          <textarea id="ctMensaje" name="mensaje" placeholder="Cuéntanos en qué te ayudamos..." required aria-describedby="err-c-mensaje"></textarea>
           <p class="error-campo" id="err-c-mensaje">Escribe tu mensaje (mínimo 5 caracteres).</p>
         </div>
         <div class="campo" id="ccConsent">
-          <label class="consent"><input type="checkbox" id="cConsent" required /> <span>He leído y acepto la <a href="#" data-modal="privacidad">Política de Privacidad</a> y autorizo el tratamiento de mis datos para responder mi mensaje. *</span></label>
+          <label class="consent"><input type="checkbox" id="ctConsent" required /> <span>He leído y acepto la <a href="#" data-modal="privacidad">Política de Privacidad</a> y autorizo el tratamiento de mis datos para responder mi mensaje. *</span></label>
           <p class="error-campo" id="err-c-consent">Debes aceptar la Política de Privacidad para continuar.</p>
         </div>
         <input class="honey" type="text" name="empresa" tabindex="-1" autocomplete="off" aria-hidden="true" />

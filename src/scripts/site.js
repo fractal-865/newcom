@@ -346,17 +346,17 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
       ev.preventDefault();
       pintarMsgC(true, '');
       if (formC.empresa.value) { pintarMsgC(true, '¡Mensaje enviado! Te responderemos a la brevedad.'); formC.reset(); return; }
-      var nombre = $('#cNombre').value.trim();
-      var email = $('#cEmail').value.trim();
-      var tel = $('#cTel').value.replace(/\D/g, '');
-      var mensaje = $('#cMensaje').value.trim();
+      var nombre = $('#ctNombre').value.trim();
+      var email = $('#ctEmail').value.trim();
+      var tel = $('#ctTel').value.replace(/\D/g, '');
+      var mensaje = $('#ctMensaje').value.trim();
       var e1 = marcarError('#ccNombre', nombre.length < 2);
       var e2 = marcarError('#ccEmail', !esEmailValido(email));
       var e3 = marcarError('#ccTel', tel !== '' && !/^\d{7,12}$/.test(tel));
       var e4 = marcarError('#ccMensaje', mensaje.length < 5);
-      var e5 = marcarError('#ccConsent', !$('#cConsent').checked);
+      var e5 = marcarError('#ccConsent', !$('#ctConsent').checked);
       if (e1 || e2 || e3 || e4 || e5) {
-        var primero = $(e1 ? '#cNombre' : e2 ? '#cEmail' : e3 ? '#cTel' : e4 ? '#cMensaje' : '#cConsent');
+        var primero = $(e1 ? '#ctNombre' : e2 ? '#ctEmail' : e3 ? '#ctTel' : e4 ? '#ctMensaje' : '#ctConsent');
         if (primero) primero.focus();
         return;
       }
@@ -383,11 +383,11 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
       });
     });
     /* Contacto: limpia el error en vivo al corregir (igual que reserva) */
-    validarEnVivo('#ccNombre', function () { return $('#cNombre').value.trim(); }, function (v) { return v.length >= 2; });
-    validarEnVivo('#ccEmail', function () { return $('#cEmail').value.trim(); }, function (v) { return esEmailValido(v); });
-    validarEnVivo('#ccTel', function () { return $('#cTel').value.replace(/\D/g, ''); }, function (v) { return v === '' || /^\d{7,12}$/.test(v); });
-    validarEnVivo('#ccMensaje', function () { return $('#cMensaje').value.trim(); }, function (v) { return v.length >= 5; });
-    validarEnVivo('#ccConsent', function () { return $('#cConsent').checked; }, function (v) { return !!v; });
+    validarEnVivo('#ccNombre', function () { return $('#ctNombre').value.trim(); }, function (v) { return v.length >= 2; });
+    validarEnVivo('#ccEmail', function () { return $('#ctEmail').value.trim(); }, function (v) { return esEmailValido(v); });
+    validarEnVivo('#ccTel', function () { return $('#ctTel').value.replace(/\D/g, ''); }, function (v) { return v === '' || /^\d{7,12}$/.test(v); });
+    validarEnVivo('#ccMensaje', function () { return $('#ctMensaje').value.trim(); }, function (v) { return v.length >= 5; });
+    validarEnVivo('#ccConsent', function () { return $('#ctConsent').checked; }, function (v) { return !!v; });
   }
 
   /* ══════════ CORREO BAJO DEMANDA (anti-spam) ══════════ */
