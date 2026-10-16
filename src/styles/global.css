@@ -19,7 +19,7 @@
 html{overflow-x:hidden;overflow-x:clip}
 html,body{max-width:100%}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-alto) + 28px)}
-body{font-family:'Public Sans',system-ui,sans-serif;font-size:1.125rem;line-height:1.7;color:var(--tinta);background:var(--fondo);overflow-x:hidden}
+body{font-family:'Public Sans',system-ui,sans-serif;font-size:1.125rem;line-height:1.7;color:var(--tinta);background:var(--fondo);overflow-x:hidden;overflow-x:clip}
 body.modal-abierto{overflow:hidden}
 html.con-filtro #pagina, html.con-filtro .fijo{filter:var(--filtro)}
 img,svg{max-width:100%;display:block}
@@ -325,7 +325,7 @@ html.a11y-pausar .punto-live::after{animation:none;opacity:0}
 .beneficio .b-ico{width:54px;height:54px;border-radius:16px;background:var(--azul-claro);color:var(--azul-med);display:grid;place-items:center;padding:12px;margin-bottom:16px}
 .beneficio h3{font-size:1.1rem;margin-bottom:8px}
 .beneficio p{font-size:.98rem;color:var(--tinta-suave)}
-.centro-cta{display:flex;justify-content:center;margin-top:10px}
+.centro-cta{display:flex;justify-content:center;margin-top:10px;max-width:none;margin-inline:auto}
 .galeria-marco{position:relative;aspect-ratio:16/10;border-radius:24px;overflow:hidden;background:var(--azul);box-shadow:var(--elev-3);cursor:zoom-in}
 .g-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease}
 .g-img.activa{opacity:1;animation:kenburns 7.5s ease-out forwards}
@@ -558,7 +558,7 @@ html.a11y-ocultarimg .cierre-fondo{background-image:none!important}
 .cierre h2 span{color:var(--oro)}
 .cierre-ctas{display:flex;gap:14px;flex-wrap:wrap;margin:30px 0 48px}
 /* Cabecera del footer centrada: kicker, título, bajada y botones */
-.cierre .kicker-mod{justify-content:center}
+.cierre .kicker-mod{display:flex;justify-content:center;max-width:none}
 #tit-cierre{text-align:center}
 .cierre-lead{text-align:center;margin-inline:auto}
 .cierre-ctas{justify-content:center}
