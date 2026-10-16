@@ -657,19 +657,12 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
     try { return JSON.parse(localStorage.getItem('newcomCookies') || 'null'); }
     catch (e) { return { necesarias: true }; }
   }
-  function ckMedir() {
-    if (ckBarra && !ckBarra.hidden) {
-      document.documentElement.style.setProperty('--cookies-alto', ckBarra.offsetHeight + 'px');
-    }
-  }
   function ckMostrar() {
     if (!ckBarra || ckLeer()) return;
     ckBarra.hidden = false;
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
         ckBarra.classList.add('visible');
-        document.body.classList.add('cookies-visible');
-        ckMedir();
       });
     });
   }
@@ -678,7 +671,6 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
     var quitar = function () {
       ckBarra.hidden = true;
       ckBarra.classList.remove('visible', 'salir');
-      document.body.classList.remove('cookies-visible');
     };
     if (reduceMov || (typeof a11y !== 'undefined' && a11y.pausar)) { quitar(); return; }
     ckBarra.classList.add('salir');
@@ -703,12 +695,10 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
       var abrir = ckPrefs.hidden;
       ckPrefs.hidden = !abrir;
       $('#ckConfig').setAttribute('aria-expanded', String(abrir));
-      ckMedir();
     });
     $('#ckGuardar').addEventListener('click', function () {
       ckGuardar({ analitica: $('#ckAnalitica').checked, marketing: $('#ckMarketing').checked });
     });
-    window.addEventListener('resize', function () { ckMedir(); });
     setTimeout(ckMostrar, 1200);
   }
 
