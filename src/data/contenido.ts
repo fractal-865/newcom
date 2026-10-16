@@ -12,8 +12,8 @@ export const WHATSAPP_NUMBER = '56999915690';
 export const CONFIG = { urlSitio: 'https://newcompuntaarenas.cl/' };
 
 export const CONTACTO = {
-  // El correo real vive solo en public/api/config-correo.php (servidor)
-  // y se entrega bajo demanda vía api/contacto-email.php. No exponerlo aquí.
+  // El correo se arma en el navegador al pulsar "Mostrar correo del club"
+  // (site.js). No se publica completo en el HTML ni en el JS.
   telefonos: ['+56 9 9991 5690', '+56 9 9640 5463'],
 };
 

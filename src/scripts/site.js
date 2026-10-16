@@ -390,32 +390,24 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
     validarEnVivo('#ccConsent', function () { return $('#ctConsent').checked; }, function (v) { return !!v; });
   }
 
-  /* ══════════ CORREO BAJO DEMANDA (anti-spam) ══════════ */
+  /* ══════════ CORREO DEL CLUB (se arma al hacer clic) ══════════
+     Las partes por separado no forman un correo válido en el código,
+     así que los bots que escanean el HTML/JS no lo detectan. Funciona
+     en cualquier hosting (a diferencia de un endpoint PHP). */
   var btnCorreo = $('#btnMostrarCorreo');
   if (btnCorreo) {
     btnCorreo.addEventListener('click', function () {
-      var etiqueta = btnCorreo.querySelector('span');
-      var textoOriginal = etiqueta ? etiqueta.textContent : '';
-      btnCorreo.disabled = true;
-      if (etiqueta) etiqueta.textContent = 'Cargando…';
-      fetch('api/contacto-email.php', { method: 'POST' }).then(function (r) { return r.json(); }).then(function (res) {
-        if (res && res.ok && res.email) {
-          var a = document.createElement('a');
-          a.href = 'mailto:' + res.email;
-          var icono = btnCorreo.querySelector('svg');
-          if (icono) a.appendChild(icono.cloneNode(true));
-          a.appendChild(document.createTextNode(' ' + res.email));
-          btnCorreo.replaceWith(a);
-          a.focus();
-        } else {
-          throw new Error('sin-correo');
-        }
-      }).catch(function () {
-        btnCorreo.disabled = false;
-        if (etiqueta) etiqueta.textContent = textoOriginal || 'Mostrar correo del club';
-        var aviso = $('#correoClub');
-        if (aviso) aviso.textContent = 'No se pudo mostrar el correo. Usa el formulario de contacto.';
-      });
+      var usuario = 'contacto';
+      var dominio = 'newcompuntaarenas';
+      var tld = 'cl';
+      var correo = usuario + String.fromCharCode(64) + dominio + String.fromCharCode(46) + tld;
+      var a = document.createElement('a');
+      a.href = 'mailto:' + correo;
+      var icono = btnCorreo.querySelector('svg');
+      if (icono) a.appendChild(icono.cloneNode(true));
+      a.appendChild(document.createTextNode(' ' + correo));
+      btnCorreo.replaceWith(a);
+      a.focus();
     });
   }
 
