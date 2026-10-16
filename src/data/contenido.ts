@@ -240,30 +240,31 @@ export const FAQ = [
 
 export const TEXTOS_LEGALES: Record<string, string> = {
   privacidad:
-    '<div class="borrador">BORRADOR LEY 21.719 — PENDIENTE DE REVISIÓN POR ABOGADO ANTES DE PUBLICAR.</div>' +
-    '<h3>1. Responsable del tratamiento</h3><p>[NOMBRE DEL CLUB] · RUT: [RUT] · Correo de contacto: [CORREO DE CONTACTO] (o formulario de contacto de este sitio). Domicilio: Punta Arenas, Región de Magallanes, Chile.</p>' +
+    '<p>Última actualización: octubre de 2026.</p>' +
+    '<h3>1. Responsable del tratamiento</h3><p>Club Deportivo Newcom Escuela 18 de Septiembre, con domicilio en Punta Arenas, Región de Magallanes, Chile. Puedes contactarnos a través del formulario de este sitio o por WhatsApp.</p>' +
     '<h3>2. Datos personales que recogemos</h3><ul><li>Nombre.</li><li>Teléfono (WhatsApp).</li><li>Rango de edad y día de interés (formulario de clase de prueba).</li><li>Mensaje opcional que decidas enviarnos.</li></ul>' +
     '<h3>3. Finalidad del tratamiento</h3><p>Gestionar tu solicitud de clase de prueba, contactarte por WhatsApp o llamada para coordinar tu visita, y responder tus consultas sobre el club.</p>' +
-    '<h3>4. Base de licitud</h3><p>Tu consentimiento expreso, manifestado al marcar la casilla de aceptación del formulario (art. 4 y ss., Ley N° 21.719).</p>' +
+    '<h3>4. Base de licitud</h3><p>Tu consentimiento expreso, manifestado al marcar la casilla de aceptación del formulario (Ley N° 21.719 sobre protección de datos personales).</p>' +
     '<h3>5. Plazo de conservación</h3><p>Los datos se conservan únicamente durante el tiempo necesario para gestionar tu clase de prueba y, como máximo, 6 meses desde tu solicitud, salvo que decidas integrarte al club y pasar a los registros de socios.</p>' +
-    '<h3>6. Tus derechos</h3><p>Puedes ejercer los derechos de <strong>acceso, rectificación, supresión, oposición, portabilidad y bloqueo</strong> de tus datos, enviando un correo a [CORREO DE CONTACTO] indicando tu nombre y la solicitud. Respondemos dentro de los plazos legales (máx. 30 días hábiles, art. 14 Ley 21.719).</p>' +
+    '<h3>6. Tus derechos</h3><p>Puedes ejercer los derechos de <strong>acceso, rectificación, supresión, oposición, portabilidad y bloqueo</strong> de tus datos escribiéndonos a través del formulario de contacto de este sitio o por WhatsApp, indicando tu nombre y la solicitud. Respondemos dentro de los plazos legales (máx. 30 días hábiles, art. 14 Ley 21.719).</p>' +
     '<h3>7. Reclamos</h3><p>Sin perjuicio de lo anterior, tienes derecho a reclamar ante la autoridad competente en protección de datos personales de Chile.</p>' +
-    '<h3>8. Destinatarios y transferencias</h3><p>No vendemos ni cedemos tus datos a terceros. El mensaje se envía a través de WhatsApp del club; la mensajería se realiza por la plataforma que elijas al abrir el enlace.</p>',
+    '<h3>8. Destinatarios y transferencias</h3><p>No vendemos ni cedemos tus datos a terceros. El mensaje se envía a través del WhatsApp del club; la mensajería se realiza por la plataforma que elijas al abrir el enlace.</p>',
   terminos:
-    '<div class="borrador">BORRADOR — PENDIENTE DE REVISIÓN POR ABOGADO ANTES DE PUBLICAR.</div>' +
-    '<h3>1. Sobre este sitio</h3><p>Este sitio es informativo y de captación de nuevos jugadores del [NOMBRE DEL CLUB]. Su uso no genera relación contractual alguna.</p>' +
+    '<p>Última actualización: octubre de 2026.</p>' +
+    '<h3>1. Sobre este sitio</h3><p>Este sitio es informativo y de captación de nuevos jugadores del Club Deportivo Newcom Escuela 18 de Septiembre. Su uso no genera relación contractual alguna.</p>' +
     '<h3>2. Formularios</h3><p>Los datos enviados se utilizan solo para gestionar tu clase de prueba, conforme a la Política de Privacidad. El botón de reserva abre WhatsApp con un mensaje prellenado; el envío final depende de ti en la aplicación.</p>' +
-    '<h3>3. Propiedad intelectual</h3><p>Los contenidos, logo e imágenes del club están protegidos.</p>' +
+    '<h3>3. Propiedad intelectual</h3><p>Los contenidos, el logo y las imágenes del club están protegidos. No está permitido su uso sin autorización del club.</p>' +
     '<h3>4. Responsabilidad</h3><p>El club se reserva el derecho de modificar horarios, sedes y actividades informadas en este sitio.</p>',
   accesibilidad:
-    '<h3>Declaración de accesibilidad</h3><p>Este sitio se diseñó para cumplir WCAG 2.1 AA: texto base 18 px, contraste AA, navegación por teclado, foco visible, y un panel de ajustes propios (tamaño de texto hasta 200 %, alto contraste, escala de grises, filtros de daltonismo, fuente legible, espaciado, resaltado de enlaces, pausa de animaciones, guía de lectura, cursor grande y lectura en voz alta).</p><p>Si tienes alguna dificultad para usar el sitio, escríbenos mediante el formulario de contacto o por WhatsApp; te ayudaremos con gusto.</p>',
+    '<p>Última actualización: octubre de 2026.</p>' +
+    '<p>Este sitio se diseñó para cumplir WCAG 2.1 AA: texto base 18 px, contraste AA, navegación por teclado, foco visible, y un panel de ajustes propios (tamaño de texto hasta 200 %, alto contraste, escala de grises, filtros de daltonismo, fuente legible, espaciado, resaltado de enlaces, pausa de animaciones, guía de lectura, cursor grande y lectura en voz alta).</p><p>Si tienes alguna dificultad para usar el sitio, escríbenos mediante el formulario de contacto o por WhatsApp; te ayudaremos con gusto.</p>',
   cookies:
-    '<div class="borrador">BORRADOR LEY 21.719 — PENDIENTE DE REVISIÓN POR ABOGADO ANTES DE PUBLICAR.</div>' +
+    '<p>Última actualización: octubre de 2026.</p>' +
     '<h3>1. Qué cookies usamos</h3><p>Este sitio usa solo las cookies mínimas para funcionar. No instalamos cookies de rastreo propias ni vendemos datos.</p>' +
     '<h3>2. Cookies necesarias (siempre activas)</h3><ul><li><strong>Tu elección de cookies</strong> (nombre: <em>newcomCookies</em>): recuerda si aceptaste o rechazaste, para no preguntarte de nuevo. Dura 12 meses.</li><li><strong>Tus ajustes de accesibilidad</strong> (nombre: <em>newcomA11y</em>): guarda tamaño de texto, contraste y demás preferencias del panel de accesibilidad, solo en tu dispositivo.</li></ul>' +
     '<h3>3. Cookies opcionales</h3><p>Solo se activarían si aceptas <strong>Analítica</strong> (entender visitas para mejorar el sitio) o <strong>Marketing</strong> (avisos del club). Hoy el sitio no carga ninguna herramienta de ese tipo: al aceptarlas solo das tu permiso anticipado.</p>' +
-    '<h3>4. Contenido de terceros</h3><p>Los mapas de Google, las fuentes y los enlaces a redes sociales pueden fijar sus propias cookies al usarlos. Revisa sus políticas en sus sitios.</p>' +
-    '<h3>5. Base legal y tus derechos</h3><p>Usamos cookies opcionales solo con tu consentimiento (art. 4 y ss., Ley N° 21.719). Puedes cambiar de opinión cuando quieras borrando los datos de este sitio en tu navegador, lo que vuelve a mostrar el aviso.</p>',
+    '<h3>4. Contenido de terceros</h3><p>Los mapas de Google y los enlaces a redes sociales pueden fijar sus propias cookies al usarlos. Revisa sus políticas en sus sitios.</p>' +
+    '<h3>5. Base legal y tus derechos</h3><p>Usamos cookies opcionales solo con tu consentimiento (Ley N° 21.719). Puedes cambiar de opinión cuando quieras borrando los datos de este sitio en tu navegador, lo que vuelve a mostrar el aviso.</p>',
 };
 
 export const TITULOS_MODALES: Record<string, string> = {

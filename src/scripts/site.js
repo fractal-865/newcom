@@ -481,6 +481,7 @@ import { WHATSAPP_NUMBER, TEXTOS_LEGALES, TITULOS_MODALES, ENTRENAMIENTOS } from
     ultimoFoco = document.activeElement;
     $('#modalTitulo').textContent = TITULOS_MODALES[clave] || 'Información';
     $('#modalCuerpo').innerHTML = html;
+    $('#modalCuerpo').scrollTop = 0;
     modal.hidden = false;
     document.body.classList.add('modal-abierto');
     $('#modalCerrar').focus();
