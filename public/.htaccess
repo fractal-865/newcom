@@ -6,6 +6,14 @@ AddDefaultCharset UTF-8
   Require all denied
 </Files>
 
+# Las instrucciones de instalación nunca deben quedar públicas
+<Files "LEEME-CPANEL.txt">
+  Require all denied
+</Files>
+
+# Tipo MIME correcto del manifiesto web
+AddType application/manifest+json .webmanifest
+
 # Forzar HTTPS
 <IfModule mod_rewrite.c>
 RewriteEngine On
