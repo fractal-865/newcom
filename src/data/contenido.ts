@@ -9,7 +9,13 @@
 const BASE = import.meta.env.BASE_URL;
 
 export const WHATSAPP_NUMBER = '56999915690';
-export const CONFIG = { urlSitio: 'https://newcompuntaarenas.cl/' };
+export const CONFIG = {
+  urlSitio: 'https://newcompuntaarenas.cl/',
+  // Imagen de vista previa (Google, WhatsApp, Facebook): el escudo del club.
+  ogImagen: 'img/og-newcom-escudo-1200x630.jpg',
+  // Logo cuadrado del club (para el JSON-LD / Google).
+  logo: 'icon-512.png',
+};
 
 export const CONTACTO = {
   // El correo se arma en el navegador al pulsar "Mostrar correo del club"
@@ -283,7 +289,8 @@ export function jsonLdSportsClub() {
     sport: 'Newcom (tátumbol, vóleibol adaptado)',
     foundingDate: '2025-04-12',
     url: CONFIG.urlSitio,
-    image: CONFIG.urlSitio + 'img/og-newcom-punta-arenas.jpg',
+    logo: CONFIG.urlSitio + CONFIG.logo,
+    image: CONFIG.urlSitio + CONFIG.ogImagen,
     telephone: CONTACTO.telefonos[0],
     address: {
       '@type': 'PostalAddress',

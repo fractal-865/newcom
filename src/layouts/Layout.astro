@@ -17,11 +17,7 @@ interface Props {
 }
 const { title, description } = Astro.props;
 
-const favicon =
-  'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="%23fff" stroke="%2312355B" stroke-width="4"/><path d="M6 24c18 8 34 8 52 0" stroke="%23E02D3C" stroke-width="6" fill="none"/><path d="M10 44c14-8 30-8 44 0" stroke="%2312355B" stroke-width="6" fill="none"/><path d="M32 4c-6 18-6 38 0 56" stroke="%23E02D3C" stroke-width="5" fill="none"/></svg>';
-
-const manifest =
-  'data:application/manifest+json,{"name":"Club Deportivo Newcom Escuela 18 de Septiembre","short_name":"Newcom 18","start_url":".","display":"standalone","background_color":"%23FFFFFF","theme_color":"%2312355B","icons":[{"src":"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><circle cx=%2232%22 cy=%2232%22 r=%2230%22 fill=%22%23fff%22 stroke=%22%2312355B%22 stroke-width=%224%22/></svg>","sizes":"any","type":"image/svg+xml"}]}';
+const base = import.meta.env.BASE_URL;
 
 const ldClub = JSON.stringify(jsonLdSportsClub());
 const ldFaq = JSON.stringify(jsonLdFaqPage());
@@ -42,19 +38,21 @@ const ldWeb = JSON.stringify(jsonLdWebSite());
     <meta property="og:title" content={title} />
     <meta property="og:description" content="Más que un club, una gran familia. No necesitas experiencia: ¡ven a entrenar, compartir y disfrutar!" />
     <meta property="og:url" content={CONFIG.urlSitio} />
-    <meta property="og:image" content={`${CONFIG.urlSitio}img/og-newcom-punta-arenas.jpg`} />
-    <meta property="og:image:width" content="905" />
-    <meta property="og:image:height" content="1200" />
-    <meta property="og:image:alt" content="Jugadores y jugadoras del Club Deportivo Newcom de Punta Arenas" />
+    <meta property="og:image" content={`${CONFIG.urlSitio}${CONFIG.ogImagen}`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Escudo del Club Deportivo Newcom Escuela 18 de Septiembre, Punta Arenas" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content="Más que un club, una gran familia. No necesitas experiencia: ¡ven a entrenar, compartir y disfrutar!" />
-    <meta name="twitter:image" content={`${CONFIG.urlSitio}img/og-newcom-punta-arenas.jpg`} />
+    <meta name="twitter:image" content={`${CONFIG.urlSitio}${CONFIG.ogImagen}`} />
     <meta name="theme-color" content="#FFFFFF" />
-    <link rel="icon" href={import.meta.env.BASE_URL + 'favicon.ico'} type="image/x-icon" />
-    <link rel="apple-touch-icon" href={import.meta.env.BASE_URL + 'apple-touch-icon.png'} />
-    <link rel="icon" href={favicon} />
-    <link rel="manifest" href={manifest} />
+    <link rel="icon" href={base + 'favicon.ico'} sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="48x48" href={base + 'favicon-48.png'} />
+    <link rel="icon" type="image/png" sizes="96x96" href={base + 'favicon-96.png'} />
+    <link rel="icon" type="image/png" sizes="192x192" href={base + 'favicon-192.png'} />
+    <link rel="apple-touch-icon" href={base + 'apple-touch-icon.png'} />
+    <link rel="manifest" href={base + 'site.webmanifest'} />
     <script type="application/ld+json" set:html={ldWeb} />
     <script type="application/ld+json" set:html={ldClub} />
     <script type="application/ld+json" set:html={ldFaq} />

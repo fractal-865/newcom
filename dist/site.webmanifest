@@ -1,0 +1,15 @@
+{
+  "name": "Club Deportivo Newcom Escuela 18 de Septiembre",
+  "short_name": "Newcom 18",
+  "description": "Vóleibol adaptado (Newcom) para adultos y adultos mayores en Punta Arenas.",
+  "lang": "es-CL",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#12355B",
+  "icons": [
+    { "src": "favicon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}
